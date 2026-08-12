@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<AnchorPane maxWidth="1.7976931348623157E308" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.Student">
+   <children>
+      <VBox alignment="CENTER" layoutX="96.0" layoutY="-27.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FFFAFA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <GridPane alignment="TOP_RIGHT" layoutX="10.0" layoutY="10.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #FFFAFA;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="0.0" percentWidth="0.0" prefWidth="0.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="344.5" minWidth="10.0" prefWidth="344.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="0.0" percentWidth="0.0" prefWidth="63.5" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="106.5" minWidth="10.0" prefWidth="61.5" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label maxWidth="1.7976931348623157E308" text="Student">
+               <GridPane.margin>
+                  <Insets left="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <GridPane hgap="10.0" prefHeight="30.0" prefWidth="394.0" style="-fx-border-radius: 10px; -fx-border-color: grey;" GridPane.columnIndex="2">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="165.5" minWidth="10.0" prefWidth="39.5" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="310.0" minWidth="10.0" prefWidth="304.5" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TextField style="-fx-background-color: transparent;" GridPane.columnIndex="1" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/search2.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </ImageView>
+               </children>
+            </GridPane>
+            <GridPane maxWidth="1.7976931348623157E308" GridPane.columnIndex="4" GridPane.halignment="RIGHT">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="47.5" minWidth="10.0" prefWidth="33.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="73.0" minWidth="10.0" prefWidth="73.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ImageView fx:id="adminProfile" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="RIGHT" GridPane.valignment="CENTER">
+                     <image>
+                        <Image url="@icons/admin.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                     <children>
+                        <Label text="Admin">
+                           <font>
+                              <Font name="FreeSans Bold" size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="adminName" text="admin@jssApp">
+                           <font>
+                              <Font size="7.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </VBox>
+               </children>
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+      <ScrollPane fitToWidth="true" layoutY="65.0" prefHeight="502.0" prefWidth="654.0" style="-fx-border-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
+         <content>
+            <VBox alignment="TOP_CENTER" style="-fx-background-radius: 10 10 0 0;">
+               <children>
+                  <TilePane alignment="CENTER_LEFT" hgap="10.0" prefHeight="148.0" prefWidth="1270.0" style="-fx-border-radius: 10; -fx-border-color: C0C0C0;" tileAlignment="TOP_CENTER" vgap="5.0">
+                     <children>
+                        <HBox prefHeight="107.0" prefWidth="239.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;" TilePane.alignment="TOP_LEFT">
+                           <TilePane.margin>
+                              <Insets />
+                           </TilePane.margin>
+                           <children>
+                              <StackPane prefHeight="107.0" prefWidth="99.0">
+                                 <children>
+                                    <FontIcon iconLiteral="fas-user-graduate" iconSize="80" iconColor="#7C3AED"/>
+                                 </children>
+                              </StackPane>
+                              <VBox alignment="CENTER_LEFT" prefHeight="107.0" prefWidth="139.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="studentName" text="Student Name">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="admissionNumber" text="Adm. Number" />
+                                    <Label fx:id="studentGrade1" text="Student Grade" />
+                                    <Label fx:id="editableStatus" alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="55.0" style="-fx-background-color: #DCFCE7; -fx-background-radius: 10;" text="Active" textFill="GREEN">
+                                       <font>
+                                          <Font size="11.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets top="4.0" />
+                                       </VBox.margin>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="60.0" prefWidth="180.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+                           <children>
+                              <VBox alignment="CENTER_LEFT" prefHeight="107.0" prefWidth="108.0">
+                                 <children>
+                                    <Label style="-fx-font-weight: bold;" text="Date of Adm." />
+                                    <Label style="-fx-font-weight: bold;" text="Current status" />
+                                    <Label style="-fx-font-weight: bold;" text="Academic Year">
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox alignment="CENTER_LEFT" prefHeight="107.0" prefWidth="99.0">
+                                 <children>
+                                    <Label fx:id="admDate" text="10 June 2024" />
+                                    <Label fx:id="studentStatus" text="Active" />
+                                    <Label fx:id="academicYear" text="2024-2025" />
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="1.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <TilePane.margin>
+                              <Insets />
+                           </TilePane.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                  </TilePane>
+                  <TilePane hgap="40.0" prefHeight="220.0" prefWidth="1418.0" style="-fx-border-radius: 10; -fx-border-color: C0C0C0;" tileAlignment="TOP_LEFT" vgap="10.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="361.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="266.0" style="-fx-background-color: #ADD8E6; -fx-background-radius: 10 10 0 0;">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                       <image>
+                                          <Image url="@icons/personalInfo.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label text="Personal Information">
+                                       <font>
+                                          <Font name="FreeSans Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="173.0" prefWidth="351.0">
+                                 <children>
+                                    <VBox prefHeight="163.0" prefWidth="97.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label style="-fx-font-weight: bold;" text="Full Name" textFill="GREY">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Date of Birth" textFill="GREY">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Gender" textFill="GREY">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Nationality" textFill="GREY">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Religion" textFill="GREY">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Residence" textFill="GREY">
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="173.0" prefWidth="215.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label fx:id="studentFullname" text="Baraka Nyale" />
+                                          <Label fx:id="studentDOB" text="23 June, 2007" />
+                                          <Label fx:id="studentGender" text="Male" />
+                                          <Label fx:id="studentNationality" text="Kenyan" />
+                                          <Label fx:id="studentReligion" text="Christianity" />
+                                          <Label fx:id="studentResidence" text="Kaloleni" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <TilePane.margin>
+                              <Insets />
+                           </TilePane.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="343.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="266.0" style="-fx-background-color: #ADD8E6; -fx-background-radius: 10 10 0 0;">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@icons/personalInfo.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label text="Parent/Guardian information">
+                                       <font>
+                                          <Font name="FreeSans Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="173.0" prefWidth="408.0">
+                                 <children>
+                                    <VBox prefHeight="163.0" prefWidth="152.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label style="-fx-font-weight: bold;" text="Parent's Name" textFill="GREY">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Parent's Mobile" textFill="GREY">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Parent's Email" textFill="GREY">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label style="-fx-font-weight: bold;" text="Parent's Occupation" textFill="GREY">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="173.0" prefWidth="215.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label fx:id="parentFullName" text="Baraka Nyale">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="parentPhonenumber" text="+254 734909095">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="parentEmail" text="Male">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="parentOccupation" text="Kenyan">
+                                             <font>
+                                                <Font size="11.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <TilePane.margin>
+                              <Insets />
+                           </TilePane.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="343.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="266.0" style="-fx-background-color: #ADD8E6; -fx-background-radius: 10 10 0 0;">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@icons/classInfo.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label text="Class Infomation">
+                                       <font>
+                                          <Font name="FreeSans Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="173.0" prefWidth="408.0">
+                                 <children>
+                                    <VBox prefHeight="163.0" prefWidth="152.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label style="-fx-font-weight: bold;" text="Class" textFill="GREY" />
+                                          <Label style="-fx-font-weight: bold;" text="Class Teacher" textFill="GREY" />
+                                          <Label style="-fx-font-weight: bold;" text="Academic Year" textFill="GREY" />
+                                          <Label style="-fx-font-weight: bold;" text="House" textFill="GREY" />
+                                          <Label style="-fx-font-weight: bold;" text="Category" textFill="GREY" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="173.0" prefWidth="215.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label fx:id="studentGrade2" text="2D" />
+                                          <Label fx:id="studentTeacher" text="Mr. Maroon" />
+                                          <Label fx:id="academicYear2" text="Male" />
+                                          <Label fx:id="studentHouse" text="Ndovu" />
+                                          <Label fx:id="studentCategory" text="Day Scholar" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" top="10.0" />
+                     </padding>
+                  </TilePane>
+                  <TilePane alignment="CENTER_LEFT" hgap="40.0" prefHeight="200.0" prefWidth="1270.0" style="-fx-border-radius: 10; -fx-border-color: C0C0C0;" vgap="10.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="545.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+                           <children>
+                              <HBox prefHeight="26.0" prefWidth="266.0">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@icons/examSummary.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label text="Examination Summary">
+                                       <font>
+                                          <Font name="FreeSans Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="20.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TableView prefHeight="182.0" prefWidth="362.0" style="-fx-border-color: transparent; -fx-background-color: transparent;">
+                                 <columns>
+                                    <TableColumn fx:id="admission_number" prefWidth="75.0" style="-fx-background-color: transparent;" text="Exam" />
+                                    <TableColumn fx:id="grade2" prefWidth="75.0" style="-fx-background-color: transparent;" text="Total Marks" />
+                                    <TableColumn fx:id="name" prefWidth="131.5" style="-fx-background-color: transparent;" text="Obtained marks" />
+                                    <TableColumn fx:id="admissionDate" prefWidth="81.0" style="-fx-background-color: transparent;" text="Parcentage" />
+                                    <TableColumn prefWidth="75.0" style="-fx-background-color: transparent;" text="Grade" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </TableView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="343.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="266.0" style="-fx-background-color: #ADD8E6; -fx-background-radius: 10 10 0 0;">
+                                 <children>
+                                    <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@icons/feeSum.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Label text="Fee Summary">
+                                       <font>
+                                          <Font name="FreeSans Bold" size="13.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding>
+                              </HBox>
+                              <HBox prefHeight="173.0" prefWidth="408.0">
+                                 <children>
+                                    <VBox prefHeight="163.0" prefWidth="152.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" left="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label text="Total Fess" />
+                                          <Label text="Paid Amount" />
+                                          <Label text="Due Amount" />
+                                          <Label text="Last Payment" />
+                                          <Label text="Payment Status" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="173.0" prefWidth="215.0" spacing="4.0">
+                                       <HBox.margin>
+                                          <Insets bottom="5.0" right="5.0" top="5.0" />
+                                       </HBox.margin>
+                                       <children>
+                                          <Label style="-fx-background-color: #DBEAFE; -fx-background-radius: 10;" text="Ksh.23000" textFill="#1d4ed8">
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label style="-fx-background-color: #DCFCE7; -fx-background-radius: 10;" text="Ksh.20000" textFill="#166534">
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label style="-fx-background-color: #FEE2E2; -fx-background-radius: 10;" text="Ksh.3000" textFill="#b91c1c">
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </Label>
+                                          <Label text="12 March, 2026" />
+                                          <Label style="-fx-background-color: #DCFCE7; -fx-background-radius: 10;" text="Paid" textFill="GREEN">
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="5.0" right="5.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <padding>
+                                    <Insets left="10.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="10.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="20.0" top="20.0" />
+                     </padding>
+                  </TilePane>
+                  <TilePane alignment="CENTER_LEFT" hgap="10.0" prefHeight="469.0" prefWidth="1196.0" style="-fx-border-radius: 10; -fx-border-color: C0C0C0;" tileAlignment="TOP_CENTER" vgap="5.0">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <children>
+                        <VBox maxWidth="1.7976931348623157E308" prefHeight="469.0" prefWidth="1166.0">
+                           <TilePane.margin>
+                              <Insets />
+                           </TilePane.margin>
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="41.0" prefWidth="1166.0">
+                                 <children>
+                                    <Label text="Student Population">
+                                       <font>
+                                          <Font name="FreeSans Bold" size="21.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <TableView fx:id="tableStudents" prefHeight="281.0" prefWidth="1166.0" style="-fx-border-color: transparent; -fx-background-color: transparent;">
+                                 <columns>
+                                    <TableColumn fx:id="id" minWidth="4.5" prefWidth="96.0" style="-fx-background-color: transparent;" text="S/N" />
+                                    <TableColumn fx:id="admissionNumber2" prefWidth="85.5" style="-fx-background-color: transparent;" text="Adm. Number" />
+                                    <TableColumn fx:id="firstName" prefWidth="105.0" style="-fx-background-color: transparent;" text="First Name" />
+                                    <TableColumn fx:id="lastName" prefWidth="106.5" style="-fx-background-color: transparent;" text="Last Name" />
+                                    <TableColumn fx:id="Gender" prefWidth="107.0" style="-fx-background-color: transparent;" text="Gender" />
+                                    <TableColumn fx:id="Grade" prefWidth="89.0" style="-fx-background-color: transparent;" text="Grade" />
+                                    <TableColumn fx:id="Residence" prefWidth="96.0" style="-fx-background-color: transparent;" text="Residence" />
+                                    <TableColumn fx:id="Nationality" prefWidth="114.0" style="-fx-background-color: transparent;" text="Nationality" />
+                                    <TableColumn fx:id="Actions" prefWidth="331.0" style="-fx-background-color: transparent;" text="Actions" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </TilePane>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="800.0" prefWidth="800.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <VBox prefHeight="76.0" prefWidth="784.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="19.0" prefWidth="764.0" spacing="2.0">
+               <children>
+                  <Label text="View Results">
+                     <font>
+                        <Font name="FreeSans Bold" size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Label style="-fx-font-family: freesans;" text="View and manage students' results" />
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <TilePane style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: c0c0c0;" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <children>
+                  <VBox prefHeight="73.0" prefWidth="169.0">
+                     <children>
+                        <Label style="-fx-font-family: freesans;" text="Aacdemic Year" />
+                        <ComboBox prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="73.0" prefWidth="169.0">
+                     <children>
+                        <Label style="-fx-font-family: freesans;" text="Term" />
+                        <ComboBox prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="73.0" prefWidth="169.0">
+                     <children>
+                        <Label style="-fx-font-family: freesans;" text="Class" />
+                        <ComboBox prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="73.0" prefWidth="169.0">
+                     <children>
+                        <Label style="-fx-font-family: freesans;" text="Exam" />
+                        <ComboBox prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="73.0" prefWidth="169.0">
+                     <children>
+                        <Label style="-fx-font-family: freesans;" text="Subject" />
+                        <ComboBox prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                     </children>
+                  </VBox>
+                  <Button mnemonicParsing="false" style="-fx-background-color: green; -fx-text-fill: white; -fx-font-family: freesans; -fx-font-weight: bold;" text="Generate Results" TilePane.alignment="CENTER_LEFT" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </TilePane>
+            <HBox prefHeight="454.0" prefWidth="780.0" spacing="5.0" style="-fx-background-color: #fff; -fx-border-radius: 10; -fx-border-color: c0c0c0;">
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <AnchorPane prefHeight="432.0" prefWidth="542.0" style="-fx-border-color: c0c0c0; -fx-border-radius: 10;">
+                     <children>
+                        <VBox alignment="CENTER_LEFT" layoutX="2.0" layoutY="-11.0" prefHeight="49.0" style="-fx-background-radius: 10 10 0 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <padding>
+                              <Insets left="10.0" />
+                           </padding>
+                           <children>
+                              <Label text="Report Preview">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <VBox prefHeight="432.0" prefWidth="228.0" style="-fx-border-radius: 10; -fx-border-color: c0c0c0;" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

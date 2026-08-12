@@ -1,0 +1,16 @@
+.combo-box-popup .list-view{
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-border-color: #cbd5e1;
+    -fx-border-width: 1px;
+    -fx-padding: 4px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+.inactive-toggle{
+        -fx-text-fill: grey;
+}
+.inactive-toggle:hover{
+    -fx-text-fill: white;
+
+}

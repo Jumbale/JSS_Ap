@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.Dashboard">
+    <left>
+        <VBox prefHeight="643.0" prefWidth="216.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+            <children>
+                <GridPane hgap="10.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <children>
+                        <FontIcon iconLiteral="fas-graduation-cap" iconSize="30" iconColor="deepskyblue"/>
+                        <Label text="JSS ElimuApp" textFill="WHITE" GridPane.columnIndex="1">
+                            <font>
+                                <Font name="FreeSans Bold" size="17.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="20.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </GridPane>
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxWidth="1.7976931348623157E308" style="-fx-background: transparent; -fx-background-color: black;" vbarPolicy="ALWAYS" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox maxWidth="1.7976931348623157E308" spacing="5.0">
+                            <padding>
+                                <Insets left="10.0"/>
+                            </padding>
+                            <children>
+                                <GridPane fx:id="dashboardNav" onMouseClicked="#dashBoard" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css" VBox.vgrow="ALWAYS">
+                                    <padding>
+                                        <Insets left="20.0"/>
+                                    </padding>
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-home" iconSize="25" iconColor="white"/>
+                                        <Label text="Dashboard" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                </GridPane>
+                                <GridPane fx:id="studentNav" onMouseClicked="#studentNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-graduation-cap" iconSize="25" iconColor="white"/>
+                                        <Label text="Students" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="parentNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-user-friends" iconSize="25" iconColor="white"/>
+                                        <Label text="Parents" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="teacherNav" onMouseClicked="#TeachersNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-chalkboard-teacher" iconSize="25" iconColor="white"/>
+                                        <Label text="Teachers" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="classesNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-chalkboard" iconSize="25" iconColor="white"/>
+                                        <Label text="Classes" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="attendanceNav" style="-fx-border-radius: 10; -fx-padding-left:20;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-user-check" iconSize="25" iconColor="white"/>
+                                        <Label text="Attendance" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="examsNav" onMouseClicked="#ExamNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-clipboard-list" iconSize="25" iconColor="white"/>
+                                        <Label onMouseClicked="#ExamNav" text="Exams" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="feesNav" onMouseClicked="#Fees" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-file-invoice-dollar" iconSize="25" iconColor="white"/>
+                                        <Label text="Fees" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="documentsNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-file" iconSize="25" iconColor="white"/>
+                                        <Label text="Documents" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="reportsNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-chart-bar" iconSize="25" iconColor="white"/>
+                                        <Label text="Reports" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" style="-fx-border-radius: 10;" stylesheets="@dashboard.css" text="SYSTEM" VBox.vgrow="ALWAYS">
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                </Label>
+                                <GridPane fx:id="usersNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-user" iconSize="25" iconColor="white"/>
+                                        <Label text="Users" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="rolesNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-user-tag" iconSize="25" iconColor="white"/>
+                                        <Label text="Roles and permissions" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                                <GridPane fx:id="settingsNav" style="-fx-border-radius: 10;" styleClass="grid-nav" stylesheets="@dashboard.css">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" prefWidth="100.0" />
+                                    </columnConstraints>
+                                    <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    </rowConstraints>
+                                    <children>
+                                        <FontIcon iconLiteral="fas-cog" iconSize="25" iconColor="white"/>
+                                        <Label text="Settings" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets left="5.0" />
+                                 </padding></Label>
+                                    </children>
+                                    <padding>
+                                        <Insets bottom="5.0" right="10.0" top="8.0" />
+                                    </padding>
+                                    <VBox.margin>
+                                        <Insets left="5.0" />
+                                    </VBox.margin>
+                                </GridPane>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </left>
+   <center>
+      <Label opacity="0.35" style="-fx-font-weight: bold;" text="JSS Elimu App" textFill="GREY" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="83.0" />
+         </font>
+      </Label>
+   </center>
+</BorderPane>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.AcademicYears">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="752.0" style="-fx-background-color: #FFFAFA;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <children>
+            <VBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="72.0">
+               <children>
+                  <FontIcon iconLiteral="fas-calendar" iconSize="25" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="557.0">
+               <children>
+                  <Label text="Academic Year Details">
+                     <VBox.margin>
+                        <Insets left="10.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="FreeSans Bold" size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="397.0" prefWidth="742.0" style="-fx-background-color: white; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+         <children>
+            <VBox prefHeight="142.0" prefWidth="742.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="722.0">
+                     <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-family: FreeSans;" text="Academic Year" textFill="BLUE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="87.0" prefWidth="722.0" spacing="40.0" style="-fx-border-color: blue transparent transparent transparent; -fx-background-color: white;">
+                     <children>
+                        <VBox prefHeight="196.0" prefWidth="186.0">
+                           <children>
+                              <Label text="Year Name" />
+                              <ComboBox fx:id="yearName" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="196.0" prefWidth="186.0">
+                           <children>
+                              <Label text="Status" />
+                              <ComboBox fx:id="yearStatus" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children></HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" top="20.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER_LEFT" prefHeight="268.0" prefWidth="742.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="722.0" style="-fx-background-color: white;">
+                     <children>
+                        <Label style="-fx-font-weight: bold; -fx-font-family: FreeSans;" text="Terms" textFill="BLUE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="231.0" prefWidth="722.0" spacing="10.0" style="-fx-border-color: blue transparent transparent transparent; -fx-background-color: white;">
+                     <children>
+                        <VBox prefHeight="196.0" prefWidth="186.0">
+                           <children>
+                              <Label text="Term Name" />
+                              <ComboBox fx:id="termName" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="164.0" prefWidth="172.0">
+                           <children>
+                              <Label text="Academic Year" />
+                              <ComboBox fx:id="academicYear" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="164.0" prefWidth="211.0">
+                           <children>
+                              <Label text="Start Date" />
+                              <DatePicker fx:id="startDate" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: #c0c0c0;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                        <VBox prefHeight="164.0" prefWidth="227.0">
+                           <children>
+                              <Label text="End Date" />
+                              <DatePicker fx:id="endDate" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: #c0c0c0;" />
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: white;">
+                     <children>
+                        <Button fx:id="ButtonCancel1" mnemonicParsing="false" onMouseClicked="#Cancel" style="-fx-background-color: c0c0c0; -fx-text-fill: white; -fx-font-weight: bold;" text="Cancel">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button fx:id="addTeacherButton1" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#Save" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Save">
+                           <graphic>
+                              <FontIcon iconColor="white" iconLiteral="fas-save" iconSize="20" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                     <padding>
+                        <Insets right="20.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

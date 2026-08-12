@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane minHeight="768.0" minWidth="1280.0" prefHeight="900.0" prefWidth="1400.0" styleClass="main-root" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.Dashboard">
+
+    <left>
+        <VBox prefWidth="240.0" styleClass="sidebar" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="logo-container">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="https://img.icons8.com/fluency/96/graduation-cap.png" />
+                            </image>
+                        </ImageView>
+                        <Label styleClass="logo-text" text="JSS Admin" />
+                    </children>
+                </HBox>
+
+                <ScrollPane fitToWidth="true" styleClass="sidebar-scroll" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox spacing="6.0" styleClass="menu-section">
+                            <children>
+                                <Label styleClass="menu-header" text="MAIN" />
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn, active-menu-btn" text="Dashboard">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-filled/96/ffffff/dashboard-layout.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Students">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/student-male.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Parents">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/family-sign.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Teachers">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/classroom.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Classes">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/opened-folder-purple.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Attendance">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/checked-user-male.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Exams">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/test-passed.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Fees">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/bank-card.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Discipline">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/gavel.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Documents">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/documents.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Reports">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/combo-chart.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Activity Log">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/past.png" /></image></ImageView></graphic>
+                                </Button>
+
+                                <Label styleClass="menu-header" text="SYSTEM">
+                                    <VBox.margin><Insets top="15.0" /></VBox.margin>
+                                </Label>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Users">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/group.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Roles &amp; Permissions">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/shield-security.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Settings">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/settings.png" /></image></ImageView></graphic>
+                                </Button>
+                                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn" text="Audit Logs">
+                                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/inspection.png" /></image></ImageView></graphic>
+                                </Button>
+                            </children>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+
+                <Button maxWidth="1.7976931348623157E308" alignment="BASELINE_LEFT" mnemonicParsing="false" styleClass="menu-btn, collapse-btn" text="Collapse">
+                    <graphic><ImageView fitHeight="18.0" fitWidth="18.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/94a3b8/left.png" /></image></ImageView></graphic>
+                    <VBox.margin><Insets bottom="10.0" left="10.0" right="10.0" top="5.0" /></VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="workspace-container" BorderPane.alignment="TOP_CENTER">
+            <children>
+
+                <HBox alignment="CENTER_LEFT" styleClass="top-header">
+                    <children>
+                        <Label styleClass="header-page-title" text="Dashboard" />
+                        <Region HBox.hgrow="ALWAYS" />
+
+                        <HBox alignment="CENTER_LEFT" styleClass="search-box">
+                            <children>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image><Image url="https://img.icons8.com/fluency-systems-regular/96/64748b/search.png" /></image>
+                                </ImageView>
+                                <TextField promptText="Search students, ID, roll number, emails..." styleClass="search-input" HBox.hgrow="ALWAYS" prefWidth="280.0" />
+                            </children>
+                        </HBox>
+
+                        <Button mnemonicParsing="false" styleClass="icon-notification-btn">
+                            <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/475569/bell.png" /></image></ImageView></graphic>
+                            <HBox.margin><Insets left="15.0" right="15.0" /></HBox.margin>
+                        </Button>
+
+                        <HBox alignment="CENTER_LEFT" spacing="8.0" styleClass="profile-badge">
+                            <children>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" styleClass="avatar-circle">
+                                    <image><Image url="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&amp;auto=format&amp;fit=crop&amp;q=60" /></image>
+                                </ImageView>
+                                <VBox alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label styleClass="profile-name" text="Admin" />
+                                        <Label styleClass="profile-role" text="Super Admin" />
+                                    </children>
+                                </VBox>
+                                <ImageView fitHeight="12.0" fitWidth="12.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/475569/expand-arrow.png" /></image></ImageView>
+                            </children>
+                        </HBox>
+                    </children>
+                    <VBox.margin><Insets bottom="20.0" /></VBox.margin>
+                </HBox>
+
+                <ScrollPane fitToWidth="true" styleClass="main-scroll" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox spacing="20.0">
+                            <children>
+
+                                <FlowPane hgap="16.0" vgap="16.0" prefWidth="1100.0">
+                                    <children>
+                                        <VBox styleClass="metric-card" prefWidth="176.0">
+                                            <children>
+                                                <HBox alignment="TOP_RIGHT">
+                                                    <children>
+                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label styleClass="metric-label" text="Total Students" />
+                                                                <Label styleClass="metric-value" text="1,248" />
+                                                            </children>
+                                                        </VBox>
+                                                        <Label styleClass="metric-icon-wrap, blue-icon" text="👤"/>
+                                                    </children>
+                                                </HBox>
+                                                <Label styleClass="trend-positive" text="↑ 24 this week" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="metric-card" prefWidth="176.0">
+                                            <children>
+                                                <HBox alignment="TOP_RIGHT">
+                                                    <children>
+                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label styleClass="metric-label" text="Total Teachers" />
+                                                                <Label styleClass="metric-value" text="98" />
+                                                            </children>
+                                                        </VBox>
+                                                        <Label styleClass="metric-icon-wrap, green-icon" text="👨‍🏫"/>
+                                                    </children>
+                                                </HBox>
+                                                <Label styleClass="trend-positive" text="↑ 3 this week" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="metric-card" prefWidth="176.0">
+                                            <children>
+                                                <HBox alignment="TOP_RIGHT">
+                                                    <children>
+                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label styleClass="metric-label" text="Total Parents" />
+                                                                <Label styleClass="metric-value" text="1,102" />
+                                                            </children>
+                                                        </VBox>
+                                                        <Label styleClass="metric-icon-wrap, orange-icon" text="👪"/>
+                                                    </children>
+                                                </HBox>
+                                                <Label styleClass="trend-positive" text="↑ 18 this week" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="metric-card" prefWidth="176.0">
+                                            <children>
+                                                <HBox alignment="TOP_RIGHT">
+                                                    <children>
+                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label styleClass="metric-label" text="Total Classes" />
+                                                                <Label styleClass="metric-value" text="45" />
+                                                            </children>
+                                                        </VBox>
+                                                        <Label styleClass="metric-icon-wrap, lightblue-icon" text="🏫"/>
+                                                    </children>
+                                                </HBox>
+                                                <Label styleClass="trend-neutral" text="No change" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="metric-card" prefWidth="176.0">
+                                            <children>
+                                                <HBox alignment="TOP_RIGHT">
+                                                    <children>
+                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label styleClass="metric-label" text="Attendance Today" />
+                                                                <Label styleClass="metric-value" text="92.45%" />
+                                                            </children>
+                                                        </VBox>
+                                                        <Label styleClass="metric-icon-wrap, red-icon" text="📅"/>
+                                                    </children>
+                                                </HBox>
+                                                <Label styleClass="trend-positive" text="↑ 1.32%" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="metric-card" prefWidth="190.0">
+                                            <children>
+                                                <HBox alignment="TOP_RIGHT">
+                                                    <children>
+                                                        <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                                                            <children>
+                                                                <Label styleClass="metric-label" text="Fee Collection (May)" />
+                                                                <Label styleClass="metric-value" text="Ksh 1,865,500" />
+                                                            </children>
+                                                        </VBox>
+                                                        <Label styleClass="metric-icon-wrap, purple-icon" text="KES"/>
+                                                    </children>
+                                                </HBox>
+                                                <Label styleClass="trend-positive" text="↑ 12.45%" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </FlowPane>
+
+                                <TilePane hgap="20.0" vgap="20.0" prefColumns="3" prefTileWidth="360.0" maxWidth="1.7976931348623157E308">
+                                    <children>
+
+                                        <VBox styleClass="chart-card">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" styleClass="card-header-row">
+                                                    <children>
+                                                        <Label styleClass="card-heading" text="Attendance Overview" />
+                                                        <Region HBox.hgrow="ALWAYS" />
+                                                        <ComboBox fx:id="attendanceFilterCombo" promptText="This Week" styleClass="chart-filter-select" />
+                                                    </children>
+                                                </HBox>
+                                                <LineChart fx:id="attendanceLineChart" createSymbols="true" legendVisible="false" prefHeight="220.0">
+                                                    <xAxis><CategoryAxis side="BOTTOM" /></xAxis>
+                                                    <yAxis><NumberAxis side="LEFT" upperBound="100.0" lowerBound="0.0" tickUnit="20.0" autoRanging="false" /></yAxis>
+                                                </LineChart>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="chart-card">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" styleClass="card-header-row">
+                                                    <children>
+                                                        <Label styleClass="card-heading" text="Fee Collection Overview" />
+                                                        <Region HBox.hgrow="ALWAYS" />
+                                                        <ComboBox fx:id="feeFilterCombo" promptText="May 2026" styleClass="chart-filter-select" />
+                                                    </children>
+                                                </HBox>
+                                                <PieChart fx:id="feePieChart" labelsVisible="false" legendSide="RIGHT" prefHeight="220.0" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="chart-card">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" styleClass="card-header-row">
+                                                    <children>
+                                                        <Label styleClass="card-heading" text="Student Strength" />
+                                                        <Region HBox.hgrow="ALWAYS" />
+                                                        <ComboBox fx:id="strengthFilterCombo" promptText="2026 - 2027" styleClass="chart-filter-select" />
+                                                    </children>
+                                                </HBox>
+                                                <PieChart fx:id="strengthPieChart" legendSide="RIGHT" prefHeight="220.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </TilePane>
+
+                                <TilePane hgap="20.0" vgap="20.0" prefColumns="3" prefTileWidth="360.0" maxWidth="1.7976931348623157E308">
+                                    <children>
+
+                                        <VBox styleClass="chart-card">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" styleClass="card-header-row">
+                                                    <children>
+                                                        <Label styleClass="card-heading" text="Recent Admissions" />
+                                                        <Region HBox.hgrow="ALWAYS" />
+                                                        <Button mnemonicParsing="false" styleClass="view-all-btn" text="View All" />
+                                                    </children>
+                                                </HBox>
+                                                <TableView fx:id="recentAdmissionsTable" prefHeight="260.0" styleClass="custom-table">
+                                                    <columns>
+                                                        <TableColumn fx:id="colName" prefWidth="130.0" text="Name" />
+                                                        <TableColumn fx:id="colClass" prefWidth="90.0" text="Class" />
+                                                        <TableColumn fx:id="colDate" prefWidth="120.0" text="Date of Admission" />
+                                                    </columns>
+                                                    <columnResizePolicy>
+                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                    </columnResizePolicy>
+                                                </TableView>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="chart-card">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" styleClass="card-header-row">
+                                                    <children>
+                                                        <Label styleClass="card-heading" text="Upcoming Events" />
+                                                        <Region HBox.hgrow="ALWAYS" />
+                                                        <Button mnemonicParsing="false" styleClass="view-all-btn" text="View Calendar" />
+                                                    </children>
+                                                </HBox>
+                                                <VBox spacing="14.0" styleClass="list-feed-body">
+                                                    <children>
+                                                        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="feed-row">
+                                                            <children>
+                                                                <VBox alignment="CENTER" styleClass="date-badge-wrap">
+                                                                    <children>
+                                                                        <Label styleClass="date-day" text="25" />
+                                                                        <Label styleClass="date-month" text="MAY" />
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label styleClass="feed-title" text="Parent - Teacher Meeting" />
+                                                                        <Label styleClass="feed-meta" text="09:00 AM - 01:00 PM | School Auditorium" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="feed-row">
+                                                            <children>
+                                                                <VBox alignment="CENTER" styleClass="date-badge-wrap">
+                                                                    <children>
+                                                                        <Label styleClass="date-day" text="28" />
+                                                                        <Label styleClass="date-month" text="MAY" />
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label styleClass="feed-title" text="Monthly Test - I (Grade 6 - 8)" />
+                                                                        <Label styleClass="feed-meta" text="09:00 AM - 12:00 PM | Respective Classrooms" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="feed-row">
+                                                            <children>
+                                                                <VBox alignment="CENTER" styleClass="date-badge-wrap">
+                                                                    <children>
+                                                                        <Label styleClass="date-day" text="01" />
+                                                                        <Label styleClass="date-month" text="JUN" />
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label styleClass="feed-title" text="Investiture Ceremony" />
+                                                                        <Label styleClass="feed-meta" text="10:00 AM - 12:30 PM | School Auditorium" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="chart-card">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" styleClass="card-header-row">
+                                                    <children>
+                                                        <Label styleClass="card-heading" text="Notifications" />
+                                                        <Region HBox.hgrow="ALWAYS" />
+                                                        <Button mnemonicParsing="false" styleClass="view-all-btn" text="View All" />
+                                                    </children>
+                                                </HBox>
+                                                <VBox spacing="12.0" styleClass="list-feed-body">
+                                                    <children>
+                                                        <HBox spacing="12.0" styleClass="notification-row">
+                                                            <children>
+                                                                <Label styleClass="notif-icon, notif-blue" text="📝" />
+                                                                <VBox HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label styleClass="notif-text" text="Exam Timetable for Unit Test - I has been published." wrapText="true" />
+                                                                        <Label styleClass="feed-meta" text="22 May 2026, 10:30 AM" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox spacing="12.0" styleClass="notification-row">
+                                                            <children>
+                                                                <Label styleClass="notif-icon, notif-red" text="🚌" />
+                                                                <VBox HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label styleClass="notif-text" text="Transport fee is pending for 156 students." wrapText="true" />
+                                                                        <Label styleClass="feed-meta" text="22 May 2026, 09:15 AM" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox spacing="12.0" styleClass="notification-row">
+                                                            <children>
+                                                                <Label styleClass="notif-icon, notif-green" text="👤" />
+                                                                <VBox HBox.hgrow="ALWAYS">
+                                                                    <children>
+                                                                        <Label styleClass="notif-text" text="New CBC teacher, Meera Nair, has joined." wrapText="true" />
+                                                                        <Label styleClass="feed-meta" text="21 May 2026, 03:45 PM" />
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </TilePane>
+
+                                <VBox styleClass="chart-card">
+                                    <children>
+                                        <Label styleClass="card-heading" text="Quick Actions">
+                                            <VBox.margin><Insets bottom="15.0" /></VBox.margin>
+                                        </Label>
+                                        <FlowPane hgap="14.0" vgap="14.0">
+                                            <children>
+                                                <Button mnemonicParsing="false" styleClass="quick-action-btn" text="Add Student">
+                                                    <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/3b82f6/add-user-male.png" /></image></ImageView></graphic>
+                                                </Button>
+                                                <Button mnemonicParsing="false" styleClass="quick-action-btn" text="Add Teacher">
+                                                    <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/22c55e/add-user-group-man-man.png" /></image></ImageView></graphic>
+                                                </Button>
+                                                <Button mnemonicParsing="false" styleClass="quick-action-btn" text="Add Class">
+                                                    <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/8b5cf6/add-folder.png" /></image></ImageView></graphic>
+                                                </Button>
+                                                <Button mnemonicParsing="false" styleClass="quick-action-btn" text="Mark Attendance">
+                                                    <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/ef4444/checked-user-male.png" /></image></ImageView></graphic>
+                                                </Button>
+                                                <Button mnemonicParsing="false" styleClass="quick-action-btn" text="Collect Fees">
+                                                    <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/1e293b/coins.png" /></image></ImageView></graphic>
+                                                </Button>
+                                                <Button mnemonicParsing="false" styleClass="quick-action-btn" text="Generate Reports">
+                                                    <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/0ea5e9/combo-chart.png" /></image></ImageView></graphic>
+                                                </Button>
+                                                <Button mnemonicParsing="false" styleClass="quick-action-btn" text="Upload Document">
+                                                    <graphic><ImageView fitHeight="20.0" fitWidth="20.0"><image><Image url="https://img.icons8.com/fluency-systems-regular/96/3b82f6/file-upload.png" /></image></ImageView></graphic>
+                                                </Button>
+                                            </children>
+                                        </FlowPane>
+                                    </children>
+                                </VBox>
+
+                            </children>
+                            <padding><Insets bottom="20.0" right="10.0" /></padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
