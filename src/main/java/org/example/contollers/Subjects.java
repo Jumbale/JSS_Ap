@@ -54,8 +54,7 @@ public class Subjects {
         action();
     }
 
-    public void CancelButton(MouseEvent mouseEvent) {
-    }
+
 
     public void loadSubjects(){
         ApiServices apiServices=new ApiServices();
@@ -65,6 +64,7 @@ public class Subjects {
 
                     Platform.runLater(()->{
                         subjectsTable.setItems(subjectsList);
+                        System.out.println("subjects...subjectsList");
 
                     });
                 });
@@ -118,8 +118,11 @@ public class Subjects {
 
     public void createNewSubject(MouseEvent mouseEvent) throws IOException {
         try{
-            FXMLLoader loader=new FXMLLoader(getClass().getResource("addNewSubject.fxml"));
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/org/example/addNewSubject.fxml"));
             Parent root=loader.load();
+
+            AddSubject addSubject=loader.getController();
+            addSubject.setOnLoadSubjects(this::loadSubjects);
             Stage stage=new Stage();
             Scene scene=new Scene(root);
             stage.setScene(scene);
@@ -134,6 +137,11 @@ public class Subjects {
         }
 
 
+    }
+
+    public void CancelButton(MouseEvent mouseEvent) {
+        Stage stage=(Stage)ButtonCancel.getScene().getWindow();
+        stage.close();
     }
 
 

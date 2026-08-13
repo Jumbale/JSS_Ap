@@ -490,7 +490,7 @@
                                           <Insets bottom="5.0" left="5.0" top="5.0" />
                                        </HBox.margin>
                                        <children>
-                                          <Label text="Total Fess" />
+                                          <Label text="Total Fees" />
                                           <Label text="Paid Amount" />
                                           <Label text="Due Amount" />
                                           <Label text="Last Payment" />

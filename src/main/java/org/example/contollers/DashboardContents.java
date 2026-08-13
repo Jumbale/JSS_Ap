@@ -21,8 +21,10 @@ import static javafx.fxml.FXMLLoader.load;
 public class DashboardContents {
     @FXML
 
-    public Button addSubject;
+
     public Button academicYear;
+    @FXML
+    public Button viewSubjects;
     private String email;
     @FXML
     public VBox addStudent;
@@ -137,6 +139,25 @@ public class DashboardContents {
             stage.setTitle("Academic Years Details");
             stage.showAndWait();
 
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void viewSubjects(MouseEvent mouseEvent) {
+
+        try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/org/example/viewSubjectsModal.fxml"));
+            Parent root=loader.load();
+            Stage stage=new Stage();
+            Scene scene=new Scene(root);
+            stage.setScene(scene);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(viewSubjects.getScene().getWindow());
+            stage.initStyle(StageStyle.DECORATED);
+            stage.setResizable(false);
+            stage.setTitle("All subjects");
+            stage.showAndWait();
         }catch(IOException e){
             e.printStackTrace();
         }

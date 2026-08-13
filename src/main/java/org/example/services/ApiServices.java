@@ -36,7 +36,7 @@ public class ApiServices {
 
     String AddSubject=BASE_URL+"/newSubject";
 
-    String FetchSubjects=BASE_URL+"/fetch_subject";
+    String fetchSubjects=BASE_URL+"/fetch_subject";
 
 
 
@@ -246,9 +246,9 @@ public class ApiServices {
         return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
                 .thenApply(response->{
                     FetchStudent[]body=gson.fromJson(response.body(),FetchStudent[].class);
-                    ObservableList<FetchStudent> students=FXCollections.observableArrayList(body);
+                  //  ObservableList<FetchStudent> students=FXCollections.observableArrayList(body);
 
-                    System.out.println("The Dataset: "+students);
+                  //  System.out.println("The Dataset: "+students);
 
                     return new HttpStudent<>(body,response.statusCode());
 
@@ -263,15 +263,15 @@ public class ApiServices {
 
 
         HttpRequest request=HttpRequest.newBuilder()
-                .uri(URI.create(FetchSubjects))
-                .header("Content-type","application/json")
+                .uri(URI.create(fetchSubjects))
                 .GET()
                 .build();
 
         return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
                 .thenApply(response->{
-                    FetchSubjects []body=gson.fromJson(response.body(),FetchSubjects[].class);
+                    FetchSubjects[]body=gson.fromJson(response.body(),FetchSubjects[].class);
 
+                    System.out.println("subjects...subjectsList");
                     return   new HttpFetchSubject<>(body, response.statusCode());
 
                 });

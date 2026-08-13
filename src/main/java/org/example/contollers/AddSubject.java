@@ -26,6 +26,8 @@ public class AddSubject {
     public Button ButtonCancel;
     public Button addSubjectButton;
 
+    private Runnable LoadSubjects;
+
     public void Save(MouseEvent mouseEvent) {
         String []fields={subjectCode.getText(),subjectName.getText(),department.getText()};
 
@@ -61,6 +63,7 @@ public class AddSubject {
                                 Optional<ButtonType> modal=alert.showAndWait();
                                 if(modal.isPresent()&& modal.get()==ButtonType.OK){
                                     Stage stage=(Stage)addSubjectButton.getScene().getWindow();
+                                    LoadSubjects.run();
                                     stage.close();
                                 }
                             }
@@ -73,5 +76,9 @@ public class AddSubject {
     public void CancelButton(MouseEvent mouseEvent) {
         Stage stage=(Stage)ButtonCancel.getScene().getWindow();
         stage.close();
+    }
+
+    public void setOnLoadSubjects(Runnable Subjects){
+        this.LoadSubjects=Subjects;
     }
 }

@@ -566,7 +566,7 @@
                                     <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                  </padding>
                               </Button>
-                              <Button fx:id="viewSubjects" mnemonicParsing="false" onMouseClicked="#addSubject" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 20;" styleClass="floatingButton" stylesheets="@dashboard.css" text="View Subjects">
+                              <Button fx:id="viewSubjects" mnemonicParsing="false" onMouseClicked="#viewSubjects" style="-fx-background-color: white; -fx-text-fill: black; -fx-font-weight: bold; -fx-background-radius: 20;" styleClass="floatingButton" stylesheets="@dashboard.css" text="View Subjects">
                                  <graphic>
                                     <FontIcon iconColor="black" iconLiteral="fas-book" iconSize="20" />
                                  </graphic>
