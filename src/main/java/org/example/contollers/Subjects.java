@@ -121,7 +121,7 @@ public class Subjects {
             FXMLLoader loader=new FXMLLoader(getClass().getResource("/org/example/addNewSubject.fxml"));
             Parent root=loader.load();
 
-            AddSubject addSubject=loader.getController();
+            SubjectRegister addSubject=loader.getController();
             addSubject.setOnLoadSubjects(this::loadSubjects);
             Stage stage=new Stage();
             Scene scene=new Scene(root);

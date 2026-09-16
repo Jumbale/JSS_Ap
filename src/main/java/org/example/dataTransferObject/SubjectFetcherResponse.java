@@ -1,7 +1,6 @@
 package org.example.dataTransferObject;
 
-public class ResponseUpdateStudent {
-
+public class SubjectFetcherResponse {
     private String message;
 
     public String getMessage(){

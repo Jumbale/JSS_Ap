@@ -7,34 +7,29 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.editStudent">
+<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="762.0" styleClass="mainBackground" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.StudentEditor">
    <top>
-      <HBox prefHeight="54.0" prefWidth="752.0" style="-fx-background-color: #FFFAFA;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="54.0" prefWidth="752.0" styleClass="titleBar" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
          <children>
             <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="72.0">
                <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icons/add.png" />
-                     </image>
-                  </ImageView>
+                  <FontIcon iconColor="BLUE" iconLiteral="fas-user-graduate" iconSize="30" />
                </children>
             </VBox>
-            <VBox prefHeight="54.0" prefWidth="557.0">
+            <VBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="557.0">
                <children>
-                  <Label text="Register New Student">
+                  <Label styleClass="textContents" text=" Student Details">
                      <VBox.margin>
-                        <Insets left="10.0" top="10.0" />
+                        <Insets left="10.0" />
                      </VBox.margin>
                      <font>
                         <Font name="FreeSans Bold" size="19.0" />
@@ -51,7 +46,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" />
          </BorderPane.margin>
          <children>
-            <VBox prefHeight="310.0" prefWidth="742.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+            <VBox prefHeight="310.0" prefWidth="742.0" style="-fx-background-radius: 10;" styleClass="secondaryBackground">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -69,12 +64,12 @@
                      <children>
                         <VBox prefHeight="196.0" prefWidth="186.0">
                            <children>
-                              <Label text="First Name" />
-                              <TextField fx:id="SfirstName" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
-                              <Label text="Second name" />
-                              <TextField fx:id="S_secondName" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
-                              <Label text="Admission number" />
-                              <TextField fx:id="AdmissionNumber" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
+                              <Label styleClass="textContents" text="First Name" />
+                              <TextField fx:id="SfirstName" style="-fx-background-color: transparent; -fx-border-radius: 8;" styleClass="textField" />
+                              <Label styleClass="textContents" text="Second name" />
+                              <TextField fx:id="S_secondName" style="-fx-background-color: transparent; -fx-border-radius: 8;" styleClass="textField" />
+                              <Label styleClass="textContents" text="Admission number" />
+                              <TextField fx:id="AdmissionNumber" style="-fx-background-color: transparent; -fx-border-radius: 8;" styleClass="textField" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -82,12 +77,12 @@
                         </VBox>
                         <VBox prefHeight="143.0" prefWidth="141.0">
                            <children>
-                              <Label text="Grade" />
-                              <ComboBox fx:id="Sgrade" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
-                              <Label text="Gender" />
-                              <ComboBox fx:id="Sgender" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
-                              <Label text="Residence" />
-                              <TextField fx:id="Sresidence" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
+                              <Label styleClass="textContents" text="Grade" />
+                              <ComboBox fx:id="Sgrade" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
+                              <Label styleClass="textContents" text="Gender" />
+                              <ComboBox fx:id="Sgender" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
+                              <Label styleClass="textContents" text="Residence" />
+                              <TextField fx:id="Sresidence" style="-fx-background-color: transparent; -fx-border-radius: 8;" styleClass="textField" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -95,12 +90,12 @@
                         </VBox>
                         <VBox prefHeight="143.0" prefWidth="141.0">
                            <children>
-                              <Label text="Religion" />
-                              <ComboBox fx:id="S_religion" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
-                              <Label text="Nationality" />
-                              <TextField fx:id="Snationality" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
-                              <Label text="Status" />
-                              <ComboBox fx:id="S_status" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                              <Label styleClass="textContents" text="Religion" />
+                              <ComboBox fx:id="S_religion" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
+                              <Label styleClass="textContents" text="Nationality" />
+                              <TextField fx:id="Snationality" style="-fx-background-color: transparent; -fx-border-radius: 8;" styleClass="textField" />
+                              <Label styleClass="textContents" text="Status" />
+                              <ComboBox fx:id="S_status" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -108,9 +103,9 @@
                         </VBox>
                         <VBox prefHeight="143.0" prefWidth="141.0">
                            <children>
-                              <Label text="Category" />
-                              <ComboBox fx:id="Scategory" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
-                              <Label text="Date of Birth" />
+                              <Label styleClass="textContents" text="Category" />
+                              <ComboBox fx:id="Scategory" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
+                              <Label styleClass="textContents" text="Date of Birth" />
                               <DatePicker fx:id="S_DOB" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
                            </children>
                            <padding>
@@ -121,12 +116,12 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Button fx:id="ButtonCancel" mnemonicParsing="false" onMouseClicked="#closedRegister" style="-fx-background-color: c0c0c0; -fx-text-fill: white; -fx-font-weight: bold;" text="Cancel">
+                        <Button fx:id="ButtonCancel" mnemonicParsing="false" onMouseClicked="#closedRegister" style="-fx-font-weight: bold;" styleClass="cancelButton" text="Cancel">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="BuutonUpdateStudent" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#updateStudent" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Update student">
+                        <Button fx:id="BuutonUpdateStudent" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#updateStudent" style="-fx-text-fill: white; -fx-font-weight: bold;" styleClass="saveButton" text="Update student">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>

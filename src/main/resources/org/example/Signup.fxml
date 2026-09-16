@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="495.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.Users">
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="495.0" prefWidth="800.0" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.Users">
    <columnConstraints>
       <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="40.0" />
       <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" percentWidth="60.0" />
@@ -152,7 +152,7 @@
       <AnchorPane maxWidth="1.7976931348623157E308" style="-fx-background-color: #D3D3D3;" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
          <children>
       
-            <StackPane fx:id="LoginPage" layoutY="72.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #D3D3D3;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+            <StackPane fx:id="LoginPage" layoutY="72.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #D3D3D3;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <children>
                   <VBox maxWidth="1.7976931348623157E308" StackPane.alignment="TOP_CENTER">
                      <children>
@@ -210,7 +210,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <GridPane maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" VBox.vgrow="NEVER">
+                        <GridPane maxWidth="1.7976931348623157E308" styleClass="textField" VBox.vgrow="NEVER">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
                               <ColumnConstraints hgrow="ALWAYS" percentWidth="90.0" />
@@ -238,7 +238,7 @@
                               <Insets left="20.0" right="10.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <GridPane maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+                        <GridPane maxWidth="1.7976931348623157E308" styleClass="textField">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
                               <ColumnConstraints hgrow="ALWAYS" percentWidth="90.0" />
@@ -249,7 +249,7 @@
                            <children>
 
                                <FontIcon iconColor="black" iconLiteral="fas-user-tag" iconSize="25" />
-                              <ComboBox fx:id="LoginRole" maxWidth="1.7976931348623157E308" promptText="Select your position" style="-fx-background-color: transparent;" styleClass="combo-box-popup" stylesheets="@style.css" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
+                              <ComboBox fx:id="LoginRole" maxWidth="1.7976931348623157E308" promptText="Select your position" style="-fx-background-color: transparent;" styleClass="combo-box-popup" stylesheets="@dashboard.css" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER">
                                  <GridPane.margin>
                                     <Insets right="40.0" />
                                  </GridPane.margin>
@@ -267,7 +267,7 @@
                               <Insets left="20.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <GridPane maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+                        <GridPane maxWidth="1.7976931348623157E308" styleClass="textField">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
                               <ColumnConstraints hgrow="ALWAYS" percentWidth="90.0" />
@@ -314,7 +314,7 @@
                               </Button>
                            </children>
                         </GridPane>
-                        <Button fx:id="submitLogin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginUser" style="-fx-background-color: #00008b; -fx-border-radius: 10;" text="Sign In" textFill="WHITE">
+                        <Button fx:id="submitLogin" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loginUser" styleClass="signUpAndLoginButton" stylesheets="@dashboard.css" text="Sign In" textFill="WHITE">
                            <font>
                               <Font size="16.0" />
                            </font>
@@ -330,7 +330,7 @@
                </children>
             </StackPane>
       
-                  <StackPane fx:id="SignUpPage" layoutX="50.0" layoutY="23.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #D3D3D3;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                  <StackPane fx:id="SignUpPage" layoutX="50.0" layoutY="23.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: #D3D3D3;" visible="false" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                <children>
                   <VBox maxWidth="1.7976931348623157E308" StackPane.alignment="TOP_CENTER">
                      <children>
@@ -367,7 +367,7 @@
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </GridPane.margin>
                               </Button>
-                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: white;" text="Signup" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                              <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: white;" text="SignUp" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
                                  <font>
                                     <Font name="FreeSans Bold" size="19.0" />
                                  </font>
@@ -388,7 +388,7 @@
                               <Insets left="20.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <GridPane fx:id="nameGrid" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+                        <GridPane fx:id="nameGrid" maxWidth="1.7976931348623157E308" styleClass="textField">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
                               <ColumnConstraints hgrow="ALWAYS" percentWidth="90.0" />
@@ -416,7 +416,7 @@
                               <Font size="16.0" />
                            </font>
                         </Label>
-                        <GridPane fx:id="emailGrid" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;" VBox.vgrow="NEVER">
+                        <GridPane fx:id="emailGrid" maxWidth="1.7976931348623157E308" styleClass="textField" VBox.vgrow="NEVER">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
                               <ColumnConstraints hgrow="ALWAYS" percentWidth="90.0" />
@@ -444,7 +444,7 @@
                               <Insets left="20.0" right="10.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <GridPane fx:id="positionGrid" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+                        <GridPane fx:id="positionGrid" maxWidth="1.7976931348623157E308" styleClass="textField">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
                               <ColumnConstraints hgrow="ALWAYS" percentWidth="90.0" />
@@ -472,7 +472,7 @@
                               <Insets left="20.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <GridPane fx:id="passwordGrid" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-border-color: black; -fx-border-radius: 10;">
+                        <GridPane fx:id="passwordGrid" maxWidth="1.7976931348623157E308" styleClass="textField" stylesheets="@dashboard.css">
                            <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" percentWidth="10.0" />
                               <ColumnConstraints hgrow="ALWAYS" percentWidth="90.0" />
@@ -498,9 +498,9 @@
                               <Insets left="10.0" right="10.0" />
                            </VBox.margin>
                         </GridPane>
-                        <Button fx:id="signupButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#registerUser" style="-fx-background-color: #00008b; -fx-border-radius: 10;" text="Sign Up" textFill="WHITE">
+                        <Button fx:id="signupButton" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#registerUser" styleClass="signUpAndLoginButton" stylesheets="@dashboard.css" text="SignUp" textFill="WHITE">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="FreeSans" size="16.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />

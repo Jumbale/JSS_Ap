@@ -2,16 +2,15 @@ package org.example.services;
 
 import com.google.gson.Gson;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import org.example.dataTransferObject.*;
 
 import java.net.URI;
+import java.net.URLEncoder;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Arrays;
-import java.util.List;
+import java.nio.charset.StandardCharsets;
 import java.util.concurrent.CompletableFuture;
 
 public class ApiServices {
@@ -38,6 +37,9 @@ public class ApiServices {
 
     String fetchSubjects=BASE_URL+"/fetch_subject";
 
+    String loggedTeacherStudents=BASE_URL+"/fetchClassStudents/";
+
+
 
 
     private Gson gson=new Gson();
@@ -48,7 +50,7 @@ public class ApiServices {
 
 
 
-    public CompletableFuture<HttpResetTeacherPassword<ResetTeacherPasswordResponse>> ResetPassword(ResetTeacherPassword teacherData){
+    public CompletableFuture<HttpResetTeacherPassword<TeacherPasswordResetterResponse>> ResetPassword(TeacherPasswordResetter teacherData){
         String bodyPayload=gson.toJson(teacherData);
 
         HttpRequest request=HttpRequest.newBuilder()
@@ -59,7 +61,7 @@ public class ApiServices {
 
         return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
                 .thenApply(response->{
-                    ResetTeacherPasswordResponse body=gson.fromJson(response.body(),ResetTeacherPasswordResponse.class);
+                    TeacherPasswordResetterResponse body=gson.fromJson(response.body(), TeacherPasswordResetterResponse.class);
 
                    String message=body.getMessage();
                    System.out.print(message);
@@ -172,7 +174,7 @@ public class ApiServices {
 
     }
 
-    public CompletableFuture<HttpRegisterStudent<RegisterStudent>> createStudent(RegisterS students){
+    public CompletableFuture<HttpRegisterStudent<StudentRegister>> createStudent(RegisterS students){
         String bodyPayload=gson.toJson(students);
 
         HttpRequest request=HttpRequest.newBuilder()
@@ -183,7 +185,7 @@ public class ApiServices {
 
         return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
                 .thenApply(response->{
-                    RegisterStudent body=gson.fromJson(response.body(),RegisterStudent.class);
+                    StudentRegister body=gson.fromJson(response.body(), StudentRegister.class);
 
                     String message=body.getMessage();
                     System.out.print(message);
@@ -236,16 +238,35 @@ public class ApiServices {
 
 
     //GET requests-getting data from the jss_backend
-    public CompletableFuture<HttpStudent<FetchStudent[]>> getStudentData(){
+
+    public CompletableFuture<HttpClassLevelFetch<ClassLevelStudents[]>> fetchLoggedTeacherStudents(String email){
+        String url=loggedTeacherStudents+URLEncoder.encode(email, StandardCharsets.UTF_8);
 
         HttpRequest request=HttpRequest.newBuilder()
-                .uri(URI.create(studentRecord))
+                .uri(URI.create(url))
                 .GET()
                 .build();
 
         return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
                 .thenApply(response->{
-                    FetchStudent[]body=gson.fromJson(response.body(),FetchStudent[].class);
+                    ClassLevelStudents[]body=gson.fromJson(response.body(),ClassLevelStudents[].class);
+
+
+
+                    ObservableList<ClassLevelStudents> data= FXCollections.observableArrayList(body);
+                    System.out.println(data);
+                    return new HttpClassLevelFetch<>(body);
+                });
+}
+    public CompletableFuture<HttpStudent<StudentFetcher[]>> getStudentData(){
+
+        HttpRequest request=HttpRequest.newBuilder()
+                .uri(URI.create(studentRecord))
+                .GET()
+                .build();
+        return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
+               .thenApply(response->{
+                    StudentFetcher[]body=gson.fromJson(response.body(), StudentFetcher[].class);
                   //  ObservableList<FetchStudent> students=FXCollections.observableArrayList(body);
 
                   //  System.out.println("The Dataset: "+students);
@@ -284,7 +305,7 @@ public class ApiServices {
 
     //PATCH Requests-sending specific data to the jss_backend
 
-    public CompletableFuture<HttpPatch<PatchResponse>> patchStudent(FetchStudent myStudent){
+    public CompletableFuture<HttpPatch<PatcherResponse>> patchStudent(StudentFetcher myStudent){
         String payload=gson.toJson(myStudent);
 
         HttpRequest request=HttpRequest.newBuilder()
@@ -295,7 +316,7 @@ public class ApiServices {
 
         return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
                 .thenApply(response->{
-                    PatchResponse body=gson.fromJson(response.body(),PatchResponse.class);
+                    PatcherResponse body=gson.fromJson(response.body(), PatcherResponse.class);
 
                     String message=body.getMessage();
                     System.out.print(message);
@@ -311,7 +332,7 @@ public class ApiServices {
 
     }
 
-    public CompletableFuture<HttpUpdateStudent<ResponseUpdateStudent>> UpdateStudentDetails(UpdateStudent updateSt){
+    public CompletableFuture<HttpUpdateStudent<StudentUpdaterResponse>> UpdateStudentDetails(StudentUpdater updateSt){
         String  updateStudent=BASE_URL+"/Updatestudent/"+updateSt.getAdmNumber();
         String payload=gson.toJson(updateSt);
 
@@ -323,7 +344,7 @@ public class ApiServices {
 
         return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
                 .thenApply(response->{
-                    ResponseUpdateStudent body=gson.fromJson(response.body(),ResponseUpdateStudent.class);
+                    StudentUpdaterResponse body=gson.fromJson(response.body(), StudentUpdaterResponse.class);
 
                     String message=body.getMessage();
                     System.out.print(message);

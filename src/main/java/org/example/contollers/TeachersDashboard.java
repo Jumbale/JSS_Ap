@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import org.example.utils.SharedData;
 
 import java.io.IOException;
 
@@ -26,6 +27,10 @@ public class TeachersDashboard {
     public GridPane Logout;
     @FXML
     public GridPane dashboardNav;
+    @FXML
+    public void initialize(){
+        System.out.println("Logged In teacher: "+SharedData.getInstance().getTeacherEmail());
+    }
 
     public void dashBoard(MouseEvent mouseEvent) throws IOException {
         clear();

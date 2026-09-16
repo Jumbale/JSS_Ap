@@ -12,21 +12,21 @@
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.AcademicYears">
+<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="762.0" styleClass="mainBackground" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.AcademicYears">
    <top>
-      <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="752.0" style="-fx-background-color: #FFFAFA;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="752.0" styleClass="titleBar" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
          <children>
             <VBox alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="72.0">
                <children>
-                  <FontIcon iconLiteral="fas-calendar" iconSize="25" />
+                  <FontIcon iconLiteral="fas-calendar" iconSize="25" styleClass="fontIcon" />
                </children>
             </VBox>
             <VBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="557.0">
                <children>
-                  <Label text="Academic Year Details">
+                  <Label styleClass="textContents" text="Academic Year Details">
                      <VBox.margin>
                         <Insets left="10.0" />
                      </VBox.margin>
@@ -40,31 +40,31 @@
       </HBox>
    </top>
    <center>
-      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="397.0" prefWidth="742.0" style="-fx-background-color: white; -fx-background-radius: 10;" BorderPane.alignment="CENTER">
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="397.0" prefWidth="742.0" style="-fx-background-radius: 10;" styleClass="secondaryBackground" stylesheets="@dashboard.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
          <children>
-            <VBox prefHeight="142.0" prefWidth="742.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+            <VBox prefHeight="142.0" prefWidth="742.0" style="-fx-background-radius: 10;" styleClass="secondaryBackground">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
                   <VBox alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="722.0">
                      <children>
-                        <Label style="-fx-font-weight: bold; -fx-font-family: FreeSans;" text="Academic Year" textFill="BLUE">
+                        <Label style="-fx-font-weight: bold; -fx-font-family: FreeSans;" styleClass="textContents" text="Academic Year" textFill="BLUE">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
                      </children>
                   </VBox>
-                  <HBox prefHeight="87.0" prefWidth="722.0" spacing="40.0" style="-fx-border-color: blue transparent transparent transparent; -fx-background-color: white;">
+                  <HBox prefHeight="87.0" prefWidth="722.0" spacing="40.0" style="-fx-border-color: blue transparent transparent transparent;">
                      <children>
                         <VBox prefHeight="196.0" prefWidth="186.0">
                            <children>
-                              <Label text="Year Name" />
-                              <ComboBox fx:id="yearName" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                              <Label styleClass="textContents" text="Year Name" />
+                              <ComboBox fx:id="yearName" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -72,8 +72,8 @@
                         </VBox>
                         <VBox prefHeight="196.0" prefWidth="186.0">
                            <children>
-                              <Label text="Status" />
-                              <ComboBox fx:id="yearStatus" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                              <Label style="-fx-font-type: FreeSans;" styleClass="textContents" text="Status" />
+                              <ComboBox fx:id="yearStatus" prefWidth="150.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -85,26 +85,26 @@
                   <Insets bottom="20.0" top="20.0" />
                </VBox.margin>
             </VBox>
-            <VBox alignment="CENTER_LEFT" prefHeight="268.0" prefWidth="742.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+            <VBox alignment="CENTER_LEFT" prefHeight="268.0" prefWidth="742.0" style="-fx-background-radius: 10;" styleClass="secondaryBackground">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" />
                </padding>
                <children>
-                  <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="722.0" style="-fx-background-color: white;">
+                  <VBox alignment="CENTER_LEFT" prefHeight="36.0" prefWidth="722.0">
                      <children>
-                        <Label style="-fx-font-weight: bold; -fx-font-family: FreeSans;" text="Terms" textFill="BLUE">
+                        <Label style="-fx-font-weight: bold; -fx-font-family: FreeSans;" styleClass="textContents" text="Terms" textFill="BLUE">
                            <font>
                               <Font size="16.0" />
                            </font>
                         </Label>
                      </children>
                   </VBox>
-                  <HBox prefHeight="231.0" prefWidth="722.0" spacing="10.0" style="-fx-border-color: blue transparent transparent transparent; -fx-background-color: white;">
+                  <HBox prefHeight="231.0" prefWidth="722.0" spacing="10.0" style="-fx-border-color: blue transparent transparent transparent;">
                      <children>
                         <VBox prefHeight="196.0" prefWidth="186.0">
                            <children>
-                              <Label text="Term Name" />
-                              <ComboBox fx:id="termName" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                              <Label styleClass="textContents" text="Term Name" />
+                              <ComboBox fx:id="termName" prefWidth="150.0" styleClass="comboBox" stylesheets="@dashboard.css" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -112,17 +112,17 @@
                         </VBox>
                         <VBox prefHeight="164.0" prefWidth="172.0">
                            <children>
-                              <Label text="Academic Year" />
-                              <ComboBox fx:id="academicYear" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" />
+                              <Label styleClass="textContents" stylesheets="@dashboard.css" text="Academic Year" />
+                              <ComboBox fx:id="academicYear" prefWidth="150.0" styleClass="comboBox" stylesheets="@dashboard.css" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox prefHeight="164.0" prefWidth="211.0">
+                        <VBox prefHeight="164.0" prefWidth="211.0" stylesheets="@dashboard.css">
                            <children>
-                              <Label text="Start Date" />
-                              <DatePicker fx:id="startDate" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: #c0c0c0;" />
+                              <Label styleClass="textContents" text="Start Date" />
+                              <DatePicker fx:id="startDate" prefWidth="150.0" stylesheets="@dashboard.css" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -130,8 +130,8 @@
                         </VBox>
                         <VBox prefHeight="164.0" prefWidth="227.0">
                            <children>
-                              <Label text="End Date" />
-                              <DatePicker fx:id="endDate" prefWidth="150.0" style="-fx-background-color: transparent; -fx-border-radius: 10; -fx-border-color: #c0c0c0;" />
+                              <Label styleClass="textContents" stylesheets="@dashboard.css" text="End Date" />
+                              <DatePicker fx:id="endDate" prefWidth="150.0" stylesheets="@dashboard.css" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -139,14 +139,14 @@
                         </VBox>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: white;">
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Button fx:id="ButtonCancel1" mnemonicParsing="false" onMouseClicked="#Cancel" style="-fx-background-color: c0c0c0; -fx-text-fill: white; -fx-font-weight: bold;" text="Cancel">
+                        <Button fx:id="ButtonCancel1" mnemonicParsing="false" onMouseClicked="#Cancel" style="-fx-font-weight: bold;" styleClass="cancelButton" stylesheets="@dashboard.css" text="Cancel">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
-                        <Button fx:id="addTeacherButton1" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#Save" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-weight: bold;" text="Save">
+                        <Button fx:id="addTeacherButton1" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#Save" style="-fx-font-weight: bold;" styleClass="saveButton" text="Save">
                            <graphic>
                               <FontIcon iconColor="white" iconLiteral="fas-save" iconSize="20" />
                            </graphic>

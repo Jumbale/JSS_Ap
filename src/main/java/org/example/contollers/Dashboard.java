@@ -13,12 +13,16 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import org.example.utils.SharedData;
+import org.kordamp.ikonli.javafx.FontIcon;
 
 import java.io.IOException;
 
 public class Dashboard {
 
+    @FXML
 
+    public FontIcon AIButton;
     private String adminEmail;
 
     @FXML
@@ -123,6 +127,7 @@ public class Dashboard {
     @FXML
     public void initialize(){
         System.out.println(adminEmail);
+
     }
     public void setAdminEmail(String email) throws IOException {
         this.adminEmail=email;
@@ -237,10 +242,26 @@ public class Dashboard {
         examsNav.getStyleClass().remove("active");
 
         feesNav.getStyleClass().remove("active");
+        settingsNav.getStyleClass().remove("active");
 
     }
 
 
+    public void openSettings(MouseEvent mouseEvent) {
+        restTabs();
+        settingsNav.getStyleClass().add("active");
 
+        try {
+            Parent settings = FXMLLoader.load(Dashboard.class.getResource("/org/example/settings.fxml"));
+            BorderPane.setCenter(settings);
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void askAI(MouseEvent mouseEvent) {
+    }
 }
 

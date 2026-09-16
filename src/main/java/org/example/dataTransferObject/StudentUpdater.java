@@ -1,6 +1,6 @@
 package org.example.dataTransferObject;
 
-public class UpdateStudent {
+public class StudentUpdater {
     private String admNumber;
     private String firstName;
     private String lastName;
@@ -19,9 +19,9 @@ public class UpdateStudent {
 
     private String DOB;
 
-    public UpdateStudent(String admNumber,String firstName, String lastName,
-                String Gender,String Grade,String Residence,String Nationality,
-                         String Religion, String Status,String Category, String DOB){
+    public StudentUpdater(String admNumber, String firstName, String lastName,
+                          String Gender, String Grade, String Residence, String Nationality,
+                          String Religion, String Status, String Category, String DOB){
         this.admNumber=admNumber;
         this.firstName=firstName;
         this.lastName=lastName;

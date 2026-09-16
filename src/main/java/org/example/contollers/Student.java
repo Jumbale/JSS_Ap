@@ -17,11 +17,10 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.example.dataTransferObject.FetchStudent;
+import org.example.dataTransferObject.StudentFetcher;
 import org.example.services.ApiServices;
 import org.kordamp.ikonli.javafx.FontIcon;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -79,31 +78,31 @@ public class Student {
     public Label studentHouse;
     public Label studentCategory;
     @FXML
-    private TableView <FetchStudent>tableStudents;
+    private TableView <StudentFetcher>tableStudents;
     @FXML
-    public TableColumn  <FetchStudent,String> firstName;
+    public TableColumn  <StudentFetcher,String> firstName;
     @FXML
-    public TableColumn  <FetchStudent,String> lastName;
+    public TableColumn  <StudentFetcher,String> lastName;
     @FXML
-    public TableColumn  <FetchStudent,String> Gender;
+    public TableColumn  <StudentFetcher,String> Gender;
     @FXML
-    public TableColumn  <FetchStudent,String> Grade;
+    public TableColumn  <StudentFetcher,String> Grade;
     @FXML
-    public TableColumn   <FetchStudent,String>Residence;
+    public TableColumn   <StudentFetcher,String>Residence;
     @FXML
-    public TableColumn  <FetchStudent,String> Nationality;
+    public TableColumn  <StudentFetcher,String> Nationality;
     @FXML
-    public TableColumn <FetchStudent,Integer> id;
+    public TableColumn <StudentFetcher,Integer> id;
     @FXML
-    public TableColumn <FetchStudent,String> admissionNumber2;
+    public TableColumn <StudentFetcher,String> admissionNumber2;
     @FXML
-    public TableColumn<FetchStudent,Void> Actions;
+    public TableColumn<StudentFetcher,Void> Actions;
 
 
     public void initialize(){
         tableStudents.setPlaceholder(new Label("No student Found"));
 
-        id.setCellFactory(col->new TableCell<FetchStudent,Integer>(){
+        id.setCellFactory(col->new TableCell<StudentFetcher,Integer>(){
             @Override
                 protected void updateItem(Integer item,boolean empty){
                     super.updateItem(item,empty);
@@ -136,7 +135,7 @@ public class Student {
                    // String  lastName=result.getStudentData()[0].getLast_name();
                    // System.out.println(firstName);
                    // System.out.println(lastName);
-                   ObservableList<FetchStudent>studentData=FXCollections.observableArrayList(result.getStudentData());
+                   ObservableList<StudentFetcher>studentData=FXCollections.observableArrayList(result.getStudentData());
 
                     Platform.runLater(()->{
                         tableStudents.setItems(studentData);
@@ -181,24 +180,24 @@ public class Student {
 
               hbox.getChildren().addAll(editButton,deleteButton,viewButton);
               editButton.setOnAction(event->{
-                  FetchStudent  student=getTableView().getItems().get(getIndex());
+                  StudentFetcher student=getTableView().getItems().get(getIndex());
 
               });
 
               deleteButton.setOnAction(event->{
-                 FetchStudent  student=getTableView().getItems().get(getIndex());
+                 StudentFetcher student=getTableView().getItems().get(getIndex());
                   handleDelete(student);
 
               });
 
               editButton.setOnAction(event->{
-                  FetchStudent  student=getTableView().getItems().get(getIndex());
+                  StudentFetcher student=getTableView().getItems().get(getIndex());
 
                   try {
                       FXMLLoader loader= new FXMLLoader(getClass().getResource("/org/example/editStudent.fxml"));
 
                       Parent root=loader.load();
-                      editStudent editStudent=loader.getController();
+                      StudentEditor editStudent=loader.getController();
                       editStudent.setUpdateStudent(student);
                       editStudent.setOnloadStudentData(Student.this::loadStudents);
                       Stage stage =new Stage();
@@ -224,7 +223,7 @@ public class Student {
               });
 
               viewButton.setOnAction(event->{
-                  FetchStudent  student=getTableView().getItems().get(getIndex());
+                  StudentFetcher student=getTableView().getItems().get(getIndex());
                   handleView(student);
 
 
@@ -254,7 +253,7 @@ public class Student {
 
 
     }
-    public void handleDelete(FetchStudent student){
+    public void handleDelete(StudentFetcher student){
 
         Alert alert=new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Student");
@@ -306,7 +305,7 @@ public class Student {
 
 
 }
-    public void handleView(FetchStudent student){
+    public void handleView(StudentFetcher student){
 
         String formattedDOB=student.getDOB().split("T")[0];
         String dateAdmitted=student.getCreatedAt().split("T")[0];

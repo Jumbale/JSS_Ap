@@ -12,7 +12,7 @@ import org.example.utils.CheckEmptyFields;
 
 import java.util.Optional;
 
-public class AddClass {
+public class ClassRegister {
 
     @FXML
     public TextField teacherName;

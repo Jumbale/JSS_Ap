@@ -12,7 +12,7 @@ import org.example.services.ApiServices;
 import java.time.LocalDate;
 import java.util.Optional;
 
-public class registerStudents {
+public class StudentsRegistration {
     @FXML
     public TextField AdmissionNumber;
     @FXML

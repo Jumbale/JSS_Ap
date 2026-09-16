@@ -15,7 +15,7 @@ import org.example.utils.CheckEmptyFields;
 
 import java.util.Optional;
 
-public class AddSubject {
+public class SubjectRegister {
     @FXML
     public TextField subjectCode;
     @FXML

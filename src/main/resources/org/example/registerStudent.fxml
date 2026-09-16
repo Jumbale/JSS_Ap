@@ -7,36 +7,31 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.registerStudents">
+<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="762.0" styleClass="mainBackground" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.StudentsRegistration">
    <top>
-      <HBox prefHeight="54.0" prefWidth="752.0" style="-fx-background-color: #FFFAFA;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="752.0" styleClass="titleBar" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
          <children>
             <VBox alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="54.0" prefWidth="72.0">
                <children>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@icons/add.png" />
-                     </image>
-                  </ImageView>
+                  <FontIcon iconColor="BLUE" iconLiteral="fas-user-graduate" iconSize="30" />
                </children>
             </VBox>
-            <VBox prefHeight="54.0" prefWidth="557.0">
+            <VBox alignment="CENTER_LEFT" prefHeight="54.0" prefWidth="557.0">
                <children>
-                  <Label text="Register New Student">
+                  <Label styleClass="textContents" text="Student Admission">
                      <VBox.margin>
-                        <Insets left="10.0" top="10.0" />
+                        <Insets left="10.0" />
                      </VBox.margin>
                      <font>
                         <Font name="FreeSans Bold" size="19.0" />
@@ -53,7 +48,7 @@
             <Insets bottom="10.0" left="10.0" right="10.0" />
          </BorderPane.margin>
          <children>
-            <VBox prefHeight="310.0" prefWidth="742.0" style="-fx-background-color: #FFFAFA; -fx-background-radius: 10;">
+            <VBox prefHeight="310.0" prefWidth="742.0" style="-fx-background-radius: 10;" styleClass="secondaryBackground">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -69,102 +64,102 @@
                   </VBox>
                   <HBox prefHeight="231.0" prefWidth="722.0" style="-fx-border-color: blue transparent transparent transparent;">
                      <children>
-                        <VBox prefHeight="196.0" prefWidth="186.0">
+                        <VBox prefHeight="196.0" prefWidth="186.0" spacing="10.0">
                            <children>
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="First Name" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="First Name" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <TextField fx:id="SfirstName" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
+                              <TextField fx:id="SfirstName" styleClass="textField" />
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Second name" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Second name" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <TextField fx:id="S_secondName" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
+                              <TextField fx:id="S_secondName" styleClass="textField" />
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Admission number" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Admission number" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <TextField fx:id="AdmissionNumber" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
+                              <TextField fx:id="AdmissionNumber" styleClass="textField" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox prefHeight="143.0" prefWidth="141.0">
+                        <VBox prefHeight="143.0" prefWidth="141.0" spacing="10.0">
                            <children>
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grade" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Grade" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <ComboBox fx:id="Sgrade" prefWidth="150.0" />
+                              <ComboBox fx:id="Sgrade" prefWidth="150.0" styleClass="comboBox" />
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Gender" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <ComboBox fx:id="Sgender" prefWidth="150.0" />
+                              <ComboBox fx:id="Sgender" prefWidth="150.0" styleClass="comboBox" />
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Residence" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Residence" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <TextField fx:id="Sresidence" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
+                              <TextField fx:id="Sresidence" styleClass="textField" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox prefHeight="143.0" prefWidth="141.0">
+                        <VBox prefHeight="143.0" prefWidth="141.0" spacing="10.0">
                            <children>
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Religion" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Religion" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <ComboBox fx:id="S_religion" prefWidth="150.0" />
+                              <ComboBox fx:id="S_religion" prefWidth="150.0" styleClass="comboBox" />
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nationality" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Nationality" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <TextField fx:id="Snationality" style="-fx-background-color: transparent; -fx-border-color: c0c0c0; -fx-border-radius: 8;" />
+                              <TextField fx:id="Snationality" styleClass="textField" />
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Status" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <ComboBox fx:id="S_status" prefWidth="150.0" />
+                              <ComboBox fx:id="S_status" prefWidth="150.0" styleClass="comboBox" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </padding>
                         </VBox>
-                        <VBox prefHeight="143.0" prefWidth="141.0">
+                        <VBox prefHeight="143.0" prefWidth="141.0" spacing="10.0">
                            <children>
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Category" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Category" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
-                              <ComboBox fx:id="Scategory" prefWidth="150.0" />
+                              <ComboBox fx:id="Scategory" prefWidth="150.0" styleClass="comboBox" />
                               <TextFlow prefHeight="9.0" prefWidth="169.0">
                                  <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Date of Birth" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="textContents" text="Date of Birth" />
                                     <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                                  </children>
                               </TextFlow>
@@ -178,7 +173,7 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
-                        <Button fx:id="ButtonCancel" mnemonicParsing="false" onMouseClicked="#closedRegister" style="-fx-background-color: c0c0c0; -fx-text-fill: white; -fx-font-weight: bold;" text="Cancel">
+                        <Button fx:id="ButtonCancel" mnemonicParsing="false" onMouseClicked="#closedRegister" style="-fx-font-weight: bold;" styleClass="cancelButton" text="Cancel">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>

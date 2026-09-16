@@ -3,7 +3,7 @@ package org.example.contollers;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-public class ViewResults {
+public class ResultsView {
     @FXML
     public ComboBox<String> academicYear;
     @FXML

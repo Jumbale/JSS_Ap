@@ -6,19 +6,19 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.example.dataTransferObject.FetchStudent;
-import org.example.dataTransferObject.UpdateStudent;
+import org.example.dataTransferObject.StudentFetcher;
+import org.example.dataTransferObject.StudentUpdater;
 import org.example.services.ApiServices;
 
 import java.time.LocalDate;
 import java.util.Optional;
 
-public class editStudent {
+public class StudentEditor {
 
 
 @FXML
     public Button BuutonUpdateStudent;
-    private FetchStudent student;
+    private StudentFetcher student;
     public   DatePicker S_DOB;
     public Button ButtonCancel;
 
@@ -49,7 +49,7 @@ public class editStudent {
         Scategory.getItems().addAll("day_scholar", "boarder");
     }
 
-    public void setUpdateStudent(FetchStudent student){
+    public void setUpdateStudent(StudentFetcher student){
 
         String date=student.getDOB().split("T")[0];
 
@@ -118,7 +118,7 @@ public class editStudent {
             System.out.println(firstName);
 
 
-            UpdateStudent updateStudentData=new UpdateStudent(AdmNumber,firstName,lastName,Gender,
+            StudentUpdater updateStudentData=new StudentUpdater(AdmNumber,firstName,lastName,Gender,
                     Grade,Residence,Nationality,Religion,Status,Category,Date);
 
             ApiServices apiServices=new ApiServices();

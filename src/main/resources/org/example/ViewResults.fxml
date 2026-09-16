@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.ViewResults">
+<BorderPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #FFFAFA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.ResultsView">
    <top>
       <VBox prefHeight="76.0" prefWidth="784.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <padding>
@@ -21,7 +21,7 @@
          <children>
             <HBox alignment="CENTER_LEFT" prefHeight="19.0" prefWidth="764.0" spacing="2.0">
                <children>
-                  <Label text="View Results">
+                  <Label text="Results">
                      <font>
                         <Font name="FreeSans Bold" size="21.0" />
                      </font>
@@ -54,20 +54,8 @@
                   </VBox>
                   <VBox prefHeight="73.0" prefWidth="169.0">
                      <children>
-                        <Label style="-fx-font-family: freesans;" text="Class" />
-                        <ComboBox fx:id="classViewResults" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="73.0" prefWidth="169.0">
-                     <children>
                         <Label style="-fx-font-family: freesans;" text="Exam" />
                         <ComboBox fx:id="Exams" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
-                     </children>
-                  </VBox>
-                  <VBox prefHeight="73.0" prefWidth="169.0">
-                     <children>
-                        <Label style="-fx-font-family: freesans;" text="Subject" />
-                        <ComboBox fx:id="subjects" prefWidth="150.0" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
                      </children>
                   </VBox>
                   <Button fx:id="viewMarks" mnemonicParsing="false" style="-fx-background-color: blue; -fx-text-fill: white; -fx-font-family: freesans; -fx-font-weight: bold;" text="View Marks" TilePane.alignment="CENTER_LEFT" />
@@ -151,9 +139,9 @@
                   </VBox>
                </children>
             </TilePane>
-            <VBox style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" VBox.vgrow="NEVER">
+            <VBox style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" VBox.vgrow="ALWAYS">
                <VBox.margin>
-                  <Insets left="10.0" right="10.0" />
+                  <Insets bottom="20.0" left="10.0" right="10.0" />
                </VBox.margin>
                <children>
                   <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="778.0" spacing="10.0" style="-fx-background-radius: 10 10 0 0;">
@@ -165,12 +153,15 @@
                         <Label fx:id="hundredTotalMarks" style="-fx-font-family: freesans;" text="Marks out of: 100" />
                      </children>
                   </HBox>
-                  <TableView fx:id="studentMarks" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;">
+                  <TableView fx:id="studentMarksTable" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
                      <columns>
-                        <TableColumn fx:id="AdmissionNumber" prefWidth="75.0" style="-fx-font-family: freesans;" text="Adm. No." />
-                        <TableColumn fx:id="studentName" prefWidth="75.0" style="-fx-font-family: freesans;" text="Student Name" />
-                        <TableColumn fx:id="Gender" prefWidth="75.0" style="-fx-font-family: freesans;" text="Gender" />
-                        <TableColumn fx:id="Marks" prefWidth="75.0" style="-fx-font-family: freesans;" text="Marks" />
+                        <TableColumn fx:id="Gender" prefWidth="75.0" style="-fx-background-color: transparent;" text="Gender" />
+                        <TableColumn fx:id="AdmissionNumber" prefWidth="75.0" style="-fx-background-color: transparent;" text="Adm. Number" />
+                        <TableColumn fx:id="StudentName" prefWidth="75.0" style="-fx-background-color: transparent;" text="Name" />
+                        <TableColumn fx:id="Subject" prefWidth="75.0" style="-fx-background-color: transparent;" text="Subject" />
+                        <TableColumn fx:id="Score" prefWidth="75.0" style="-fx-background-color: transparent;" text="Score" />
+                        <TableColumn fx:id="Remarks" prefWidth="75.0" style="-fx-background-color: transparent;" text="Remarks" />
+                        <TableColumn fx:id="Actions" prefWidth="75.0" style="-fx-background-color: transparent;" text="Actions" />
                      </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

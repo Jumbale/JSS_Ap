@@ -1,6 +1,6 @@
 package org.example.dataTransferObject;
 
-public class FetchStudent {
+public class StudentFetcher {
     private int id;
     private String admission_number;
     private String first_name;
@@ -20,11 +20,11 @@ public class FetchStudent {
 
 
 
-    public FetchStudent(int id,String admission_number,String first_name, String last_name,
-                        String created_at,String grade, String gender,String residence,
-                        String date_of_birth, String religion,String nationality,
-                        String status,String category,
-                        String class_id){
+    public StudentFetcher(int id, String admission_number, String first_name, String last_name,
+                          String created_at, String grade, String gender, String residence,
+                          String date_of_birth, String religion, String nationality,
+                          String status, String category,
+                          String class_id){
         this.id=id;
         this.admission_number=admission_number;
         this.category=category;

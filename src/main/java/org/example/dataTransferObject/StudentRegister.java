@@ -1,6 +1,6 @@
 package org.example.dataTransferObject;
 
-public class RegisterStudent {
+public class StudentRegister {
 
     private String message;
 

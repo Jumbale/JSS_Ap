@@ -1,6 +1,6 @@
 package org.example.dataTransferObject;
 
-public class PatchResponse {
+public class PatcherResponse {
 
     private String message;
 

@@ -1,34 +1,258 @@
-.grid-nav {
-    -fx-background-color:#000000;
-    -fx-background-radius:10px;
-    -fx-padding:5px 2px 5px 10px;
-}
+    .grid-nav {
+        -fx-background-color:#000000;
+        -fx-background-radius:10px;
+        -fx-padding:5px 2px 5px 10px;
+    }
 
-.grid-nav:hover {
-    -fx-background-color:#36454F;
-    -fx-background-radius:10px;
-}
-.grid-nav.active {
-    -fx-background-color:#2563EB;
-    -fx-background-radius:10px;
-}
-.alertSuccessVbox {
-    -fx-background-color:#fff;
-    -fx-border-color:#16A34A transparent transparent transparent;
-    -fx-border-width:10px;
-}
-.floatingButton{
--fx-effect:dropshadow(gaussian,rgba(0,0,0,0.2),10,0.3,0,4)
-}
-.floatingButton:hover{
--fx-effect:dropshadow(gaussian,rgba(0,0,0,0.3),14,0.3,0,5)
-}
-.quickActions{
-    -fx-background-color:white;
-    -fx-border-color:#C0C0C0;
-}
-.quickActions:hover{
--fx-background-radius:10px;
--fx-border-color:#C0C0C0;
--fx-effect:dropshadow(gaussian,rgba(0,0,0,0.1),14,0.3,0,4)
-}
+    .grid-nav:hover {
+        -fx-background-color:#36454F;
+        -fx-background-radius:10px;
+    }
+    .grid-nav.active {
+        -fx-background-color:#2563EB;
+        -fx-background-radius:10px;
+    }
+    .alertSuccessVbox {
+        -fx-background-color:#fff;
+        -fx-border-color:#16A34A transparent transparent transparent;
+        -fx-border-width:10px;
+    }
+    .floatingButton{
+        -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.2),10,0.3,0,0);
+        -fx-background-color:#BDBDBD;
+        -fx-background-radius:10;
+    }
+    .floatingButton:hover{
+        -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.3),14,0.3,0,0);
+        -fx-background-color:#9E9E9E;
+        -fx-cursor:hand;
+    }
+       .academicYears{
+        -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.2),10,0.3,0,0);
+            -fx-background-color:#EFF6FF;
+            -fx-background-radius:10;
+            -fx-text-fill:#000;
+       }
+       .academicYears:hover{
+            -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.3),14,0.3,0,0);
+            -fx-background-color:#DBEAFE;
+            -fx-cursor:hand;
+       }
+
+       .viewSubjects{
+            -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.2),10,0.3,0,0);
+            -fx-background-color:#ECFEFF;
+            -fx-background-radius:10;
+            -fx-text-fill:#000;
+       }
+       .viewSubjects:hover{
+            -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.3),14,0.3,0,0);
+            -fx-background-color:#CFFAFE;
+            -fx-cursor:hand;
+       }
+
+
+    .quickActions{
+        -fx-border-color:transparent;
+        -fx-background-color: #FFFFFF;
+        -fx-border-radius:10px;
+    }
+    .quickActions:hover{
+        -fx-background-radius:10px;
+        -fx-border-color:transparent;
+        -fx-effect:dropshadow(gaussian,rgba(255,255,255,0.1),14,0.3,0,0);
+        -fx-background-color: #c0c0c0;
+    }
+    .secondaryBackground{
+        -fx-background-color:#BDBDBD;
+        -fx-border-radius:10px;
+        -fx-background-radius:10px;
+    }
+    .mainBackground{
+        -fx-background-color:#808080;
+    }
+    .textContents{
+        -fx-text-fill:#FFF;
+        -fx-font-family:FreeSans;
+    }
+    .titleBar{
+        -fx-background-color:#424242;
+    }
+    .textField{
+        -fx-background-radius:10;
+        -fx-border-radius:10px;
+        -fx-border-color:#fff;
+        -fx-background-color:transparent;
+        -fx-font-family:FreeSans;
+        -fx-text-fill:#000;
+    }
+    .comboBox{
+        -fx-background-radius:10;
+        -fx-border-radius:10px;
+        -fx-border-color:#fff;
+        -fx-background-color:transparent;
+    }
+
+    .combo-box-popup .list-view{
+        -fx-background-radius:10px;
+        -fx-border-radius:10px;
+        -fx-background-color:blue;
+    }
+    .combo-box-popup .list-view .virtual-flow{
+
+        -fx-background-radius:10px;
+        -fx-border-radius:10px;
+        -fx-background-color:blue;
+    }
+    .combo-box-popup .list-cell{
+        -fx-background-radius:10px;
+        -fx-border-radius:10px;
+        -fx-text-fill:#fff;
+        -fx-background-color:transparent;
+    }
+    .combo-box-popup .list-cell:hover{
+        -fx-background-radius:10px;
+        -fx-border-radius:10px;
+        -fx-background-color:#1976D2;
+
+    }
+    .saveButton{
+        -fx-background-color:#1976D2;
+        -fx-background-radius:10px;
+        -fx-text-fill:#fff;
+         -fx-font-family:FreeSans;
+    }
+    .saveButton:hover{
+       -fx-background-color:#1565C0;
+    }
+    .signUpAndLoginButton{
+        -fx-background-color:#1976D2;
+        -fx-background-radius:10px;
+        -fx-text-fill:#fff;
+    }
+    .signUpAndLoginButton:hover{
+         -fx-background-color:#1565C0;
+    }
+    .examStatus{
+        -fx-underline:false;
+    }
+
+    .cancelButton{
+        -fx-background-color:#ECEFF1;
+        -fx-text-fill:#000;
+        -fx-background-radius:10px;
+         -fx-font-family:FreeSans;
+    }
+    .fontIcon{
+        -fx-icon-color:#fff;
+    }
+
+    .examStatus{
+        -fx-underline:false;
+        -fx-text-fill:grey;
+    }
+    .examStatus:hover{
+        -fx-underline:true;
+        -fx-cursor:hand;
+        -fx-text-fill:#000;
+    }
+
+    .studentCard{
+    -fx-background-color:#EFF6FF;
+    }
+    .studentCard:hover{
+        -fx-background-color:#DBEAFE;
+    }
+
+    .classCard{
+    -fx-background-color:#ECFEFF;
+    }
+    .classCard:hover{
+        -fx-background-color:#CFFAFE;
+    }
+
+    .teacherCard{
+    -fx-background-color:#F5F3FF;
+    }
+    .teacherCard:hover{
+        -fx-background-color:#EDE9FE;
+    }
+
+    .attendanceCard{
+    -fx-background-color:#F0FDF4;
+    }
+    .attendanceCard:hover{
+        -fx-background-color:#DCFCE7;
+    }
+
+    .feesCard{
+    -fx-background-color:#FFFBEB;
+    }
+    .feesCard:hover{
+        -fx-background-color:#FEF3C7;
+    }
+
+    .reportCard{
+    -fx-background-color:#EEF2FF;
+    }
+    .reportCard:hover{
+        -fx-background-color:#E0E7FF;
+    }
+
+    .reportCard{
+    -fx-background-color:#EEF2FF;
+    }
+    .reportCard:hover{
+        -fx-background-color:#E0E7FF;
+    }
+
+    .uploadFileCard{
+    -fx-background-color:#F0FDFA;
+    }
+    .uploadFileCard:hover{
+        -fx-background-color:#CCFBF1;
+    }
+
+    .eventCard{
+    -fx-background-color:#FDF2F8;
+    }
+    .eventCard:hover{
+        -fx-background-color:#FCE7F3;
+    }
+
+    .notificationCard{
+    -fx-background-color:#FFF7ED;
+    }
+    .notificationCard:hover{
+        -fx-background-color:#FFEDD5;
+    }
+    .scroll-pane .scroll-bar:vertical{
+        -fx-pref-width:10px;
+        -fx-background-color:transparent;
+    }
+    .scroll-pane .scroll-bar:vertical .track{
+       -fx-background-color:#F1F5F9;
+       -fx-border-radius:10px;
+
+    }
+    .scroll-pane .scroll-bar:vertical .thumb{
+         -fx-background-color:#94A3B8;
+         -fx-border-radius:10px;
+    }
+    .scroll-pane .scroll-bar:vertical .increment-button{
+     -fx-padding:0;
+     -fx-pref-width:0;
+     -fx-pref-height:0;
+    }
+     .scroll-pane .scroll-bar:vertical .decrement-button{
+         -fx-padding:0;
+         -fx-pref-width:0;
+         -fx-pref-height:0;
+        }
+    .askAI{
+        -fx-icon-color:#F59E0B;
+
+    }
+    .askAI:hover{
+        -fx-icon-color:#D97706;
+        }

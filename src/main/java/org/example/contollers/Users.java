@@ -15,6 +15,7 @@ import javafx.stage.StageStyle;
 import org.example.dataTransferObject.DataModel;
 import org.example.dataTransferObject.Login;
 import org.example.services.ApiServices;
+import org.example.utils.SharedData;
 import org.example.utils.sceneManager;
 import org.kordamp.ikonli.Ikon;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
@@ -145,16 +146,18 @@ public class Users {
     }
 
     @FXML
-    public void loginUser(ActionEvent actionEvent) {
-       String  Password=loginPassword.getText();
+    public void loginUser(ActionEvent actionEvent) throws IOException {
+        String  Password=loginPassword.getText();
         String  Email=loginEmail.getText();
         String  Role=LoginRole.getValue();
 
+        System.out.println("This is the passed email "+Email);
         System.out.println(Password);
         System.out.println(Email);
         System.out.println(Role);
 
         if ((Password.trim().isEmpty() )|| (Role==null) || (Email.trim().isEmpty() )) {
+
 
             //validateFields.checkFields(LoginRole,loginEmail,loginPassword);
 
@@ -202,6 +205,10 @@ public class Users {
                                 alert.setHeaderText(null);
                                 alert.setContentText(message);
                                 alert.initStyle(StageStyle.UTILITY);
+
+                                DialogPane dialog=alert.getDialogPane();
+                                dialog.setStyle("-fx-background-color:red;-fx-border-radius:10px;-fx-background-radius:10px;");
+
                                 alert.showAndWait();
 
 
@@ -225,6 +232,11 @@ public class Users {
                                         try {
                                             FXMLLoader loader=new FXMLLoader(getClass().getResource("/org/example/PasswordReset.fxml"));
                                             Parent root=loader.load();
+
+                                            PasswordReset passwordReset=loader.getController();
+                                            passwordReset.setEmail(Email);
+
+
                                             Scene scene=new Scene(root);
                                             Stage stage=new Stage();
                                             stage.setScene(scene);
@@ -239,7 +251,10 @@ public class Users {
                                         stage.setResizable(true);
                                         stage.setTitle("Teacher Dashboard");
                                         try {
+                                            SharedData.getInstance().setTeacherEmail(loginEmail.getText());
                                             sceneManager.navigateDashboard("/org/example/TeacherDashboard.fxml");
+
+
                                         } catch (IOException e) {
                                             throw new RuntimeException(e);
                                         }

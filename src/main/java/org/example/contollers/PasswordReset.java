@@ -9,7 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.example.dataTransferObject.ResetTeacherPassword;
+import org.example.dataTransferObject.TeacherPasswordResetter;
 import org.example.services.ApiServices;
 import org.example.utils.CheckEmptyFields;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
@@ -42,6 +42,8 @@ public class PasswordReset {
     @FXML
     public FontIcon eyeIconRepeat;
 
+    private String Email;
+
     @FXML
     public void initialize(){
 
@@ -53,17 +55,23 @@ public class PasswordReset {
 
     }
 
+    public void setEmail(String teacherEmail){
+        this.Email=teacherEmail;
+    }
+
 
     public void resetPassword(MouseEvent mouseEvent) {
         String CurrentPassword=currentPassword.getText();
         String NewPassword=newPassword.getText();
         String PasswordRepeat=passwordRepeat.getText();
 
+        System.out.println("This is email: "+Email);
+
         String [] fields={NewPassword,CurrentPassword,PasswordRepeat};
         boolean checkedFields= CheckEmptyFields.CheckFields(fields);
 
         if(checkedFields){
-            ResetTeacherPassword resetTeacherPassword=new ResetTeacherPassword(CurrentPassword,NewPassword,PasswordRepeat);
+            TeacherPasswordResetter resetTeacherPassword=new TeacherPasswordResetter(CurrentPassword,NewPassword,PasswordRepeat,Email);
             ApiServices apiServices=new ApiServices();
             apiServices.ResetPassword(resetTeacherPassword)
                     .thenAccept(result->{
