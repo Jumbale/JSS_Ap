@@ -13,11 +13,11 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.text.TextFlow?>
 
-<BorderPane prefHeight="513.0" prefWidth="780.0" style="-fx-background-color: #FFFAFA;" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.MarksForm">
+<BorderPane prefHeight="513.0" prefWidth="780.0" styleClass="mainBackground" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.MarksForm">
    <center>
       <VBox prefHeight="571.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <TilePane style="-fx-background-color: white; -fx-border-radius: 10; -fx-border-color: c0c0c0;" VBox.vgrow="NEVER">
+            <TilePane style="-fx-border-radius: 10; -fx-border-color: c0c0c0;" styleClass="secondaryBackground" VBox.vgrow="NEVER">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>
@@ -30,7 +30,7 @@
                               <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                            </children>
                         </TextFlow>
-                        <ComboBox fx:id="academicYear" prefWidth="150.0" promptText="Academic year" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                        <ComboBox fx:id="academicYear" prefWidth="150.0" promptText="Academic year" style="-fx-border-radius: 10;" styleClass="comboBox" />
                      </children>
                   </VBox>
                   <VBox prefHeight="73.0" prefWidth="169.0">
@@ -41,7 +41,7 @@
                               <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                            </children>
                         </TextFlow>
-                        <ComboBox fx:id="term" prefWidth="150.0" promptText="current term" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                        <ComboBox fx:id="term" prefWidth="150.0" promptText="current term" style="-fx-border-radius: 10;" styleClass="comboBox" />
                      </children>
                   </VBox>
                   <VBox prefHeight="73.0" prefWidth="169.0">
@@ -52,7 +52,7 @@
                               <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="*" />
                            </children>
                         </TextFlow>
-                        <ComboBox fx:id="exam" prefWidth="150.0" promptText="exam type" style="-fx-background-color: white; -fx-border-color: silver; -fx-border-radius: 10;" />
+                        <ComboBox fx:id="exam" prefWidth="150.0" promptText="exam type" style="-fx-border-radius: 10;" styleClass="comboBox" />
                      </children>
                   </VBox>
                </children>
@@ -60,7 +60,7 @@
                   <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                </padding>
             </TilePane>
-            <VBox prefHeight="368.0" prefWidth="800.0" style="-fx-background-color: white; -fx-border-color: c0c0c0; -fx-border-radius: 10;" VBox.vgrow="NEVER">
+            <VBox prefHeight="368.0" prefWidth="800.0" style="-fx-border-color: c0c0c0; -fx-border-radius: 10;" styleClass="secondaryBackground" VBox.vgrow="NEVER">
                <VBox.margin>
                   <Insets left="10.0" right="10.0" />
                </VBox.margin>
@@ -75,15 +75,17 @@
                               <Label style="-fx-font-family: FreeSans;" text="Admission Number" />
                               <Label layoutX="27.0" layoutY="10.0" style="-fx-font-family: FreeSans;" text="Subject Code" />
                               <Label layoutX="46.0" layoutY="28.0" style="-fx-font-family: FreeSans;" text="Student Score" />
+                              <Label layoutX="45.0" layoutY="90.0" style="-fx-font-family: FreeSans;" text="Subject Name" />
                               <Label layoutX="66.0" layoutY="46.0" style="-fx-font-family: FreeSans;" text="School Name" />
                            </children>
                         </VBox>
                         <VBox alignment="TOP_CENTER" layoutX="20.0" layoutY="20.0" prefHeight="295.0" prefWidth="151.0" spacing="10.0">
                            <children>
-                              <TextField fx:id="AdmNumber" styleClass="textField" stylesheets="@dashboard.css" />
-                              <TextField fx:id="SubjectCode" layoutX="10.0" layoutY="10.0" styleClass="textField" stylesheets="@dashboard.css" />
-                              <TextField fx:id="StudentScore" layoutX="10.0" layoutY="59.0" styleClass="textField" stylesheets="@dashboard.css" />
-                              <TextField fx:id="SchoolName" layoutX="10.0" layoutY="108.0" styleClass="textField" stylesheets="@dashboard.css" />
+                              <TextField fx:id="AdmNumber" style="-fx-border-color: white;" styleClass="textField" stylesheets="@dashboard.css" />
+                              <TextField fx:id="subjectCode" layoutX="10.0" layoutY="10.0" style="-fx-border-color: white;" styleClass="textField" stylesheets="@dashboard.css" />
+                              <TextField fx:id="StudentScore" layoutX="10.0" layoutY="59.0" style="-fx-border-color: white;" styleClass="textField" stylesheets="@dashboard.css" />
+                              <TextField fx:id="SubjectName" layoutX="10.0" layoutY="108.0" style="-fx-border-color: white;" styleClass="textField" stylesheets="@dashboard.css" />
+                              <TextField fx:id="SchoolName" layoutX="10.0" layoutY="127.0" style="-fx-border-color: white;" styleClass="textField" stylesheets="@dashboard.css" />
                            </children>
                            <HBox.margin>
                               <Insets bottom="10.0" top="10.0" />
@@ -92,7 +94,7 @@
                         <VBox alignment="TOP_CENTER" layoutX="181.0" layoutY="20.0" prefHeight="315.0" prefWidth="314.0" spacing="10.0">
                            <children>
                               <Label style="-fx-font-family: FreeSans;" text="Remarks/Comment:" />
-                              <TextArea fx:id="Comment" prefHeight="126.0" prefWidth="274.0" promptText="remarks..." style="-fx-background-color: transparent; -fx-background-radius: 10px; -fx-border-color: #c0c0c0; -fx-border-radius: 10px;">
+                              <TextArea fx:id="Comment" prefHeight="126.0" prefWidth="274.0" promptText="remarks..." style="-fx-background-color: #F8F9FA; -fx-background-radius: 10px; -fx-border-color: #c0c0c0; -fx-border-radius: 10px; -fx-text-fill: black;">
                                  <VBox.margin>
                                     <Insets left="40.0" />
                                  </VBox.margin>

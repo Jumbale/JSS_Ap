@@ -39,6 +39,11 @@ public class ApiServices {
 
     String loggedTeacherStudents=BASE_URL+"/fetchClassStudents/";
 
+    String newExamUrl=BASE_URL+"/exams";
+    String resultsUrl=BASE_URL+"/resultsUploader";
+
+    String gradeResultsUrl=BASE_URL+"/gradeLevelResults/";
+
 
 
 
@@ -47,8 +52,42 @@ public class ApiServices {
 
 
     //POST requests-sending data to the jss_backend
+    public CompletableFuture<HttpScoresAndComments<ScoresAndCommentsResponse>>addScoresAndComments(ScoresAndComments scores){
+        String resultsPayload=gson.toJson(scores);
+        HttpRequest request=HttpRequest.newBuilder()
+                .uri(URI.create(resultsUrl))
+                .header("Content-type","application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(resultsPayload))
+                .build();
+        return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
+                .thenApply(response->{
+                    ScoresAndCommentsResponse body=gson.fromJson(response.body(),ScoresAndCommentsResponse.class);
+
+                   return new HttpScoresAndComments<>(response.statusCode(),body);
+                });
+    }
+    public CompletableFuture<HttpNewExamRegistration<NewExamRegistrationResponse>>addNewExam(NewExamRegistration exam){
+        String examPayload=gson.toJson(exam);
+
+        HttpRequest request=HttpRequest.newBuilder()
+                .uri(URI.create(newExamUrl))
+                .header("Content-type","application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(examPayload))
+                .build();
+
+        return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
+                .thenApply(response->{
+                    NewExamRegistrationResponse body=gson.fromJson(response.body(),NewExamRegistrationResponse.class);
+
+                    return new HttpNewExamRegistration<>(response.statusCode(),body);
+
+                 }
+
+                );
 
 
+
+    }
 
     public CompletableFuture<HttpResetTeacherPassword<TeacherPasswordResetterResponse>> ResetPassword(TeacherPasswordResetter teacherData){
         String bodyPayload=gson.toJson(teacherData);
@@ -238,6 +277,28 @@ public class ApiServices {
 
 
     //GET requests-getting data from the jss_backend
+
+
+
+
+    public CompletableFuture<HttpGradeResults<GradeResults[]>> fetchGradeResults(String AcademicYear,String term,String exams){
+        String academicYear=URLEncoder.encode(AcademicYear,StandardCharsets.UTF_8);
+        String terms=URLEncoder.encode(term,StandardCharsets.UTF_8).replace("+","%20");
+        String exam=URLEncoder.encode(exams,StandardCharsets.UTF_8).replace("+","%20");
+        String gradeMarksUrl=gradeResultsUrl+academicYear+"/"+terms+"/"+exam;
+
+       System.out.println(gradeMarksUrl);
+
+       HttpRequest request=HttpRequest.newBuilder()
+               .uri(URI.create(gradeMarksUrl))
+               .GET()
+               .build();
+       return client.sendAsync(request,HttpResponse.BodyHandlers.ofString())
+               .thenApply(response->{
+                   GradeResults[] body=gson.fromJson(response.body(),GradeResults[].class);
+                   return new HttpGradeResults<>(response.statusCode(),body);
+               });
+    }
 
     public CompletableFuture<HttpClassLevelFetch<ClassLevelStudents[]>> fetchLoggedTeacherStudents(String email){
         String url=loggedTeacherStudents+URLEncoder.encode(email, StandardCharsets.UTF_8);

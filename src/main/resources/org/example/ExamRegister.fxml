@@ -6,14 +6,13 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="402.0" styleClass="mainBackground" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.newExam">
+<BorderPane maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="402.0" styleClass="mainBackground" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.contollers.NewExam">
    <top>
       <HBox prefHeight="54.0" prefWidth="752.0" styleClass="titleBar" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -60,9 +59,9 @@
                         <VBox prefHeight="196.0" prefWidth="186.0">
                            <children>
                               <Label styleClass="textContents" text="Exam Name" />
-                              <TextField fx:id="ExamName" style="-fx-background-color: transparent; -fx-border-radius: 8;" styleClass="textField" />
+                              <ComboBox fx:id="ExamName" layoutX="20.0" layoutY="132.0" prefHeight="29.0" prefWidth="163.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
                               <Label styleClass="textContents" text="Term " />
-                              <TextField fx:id="TermName" style="-fx-background-color: transparent; -fx-border-radius: 8;" styleClass="textField" />
+                              <ComboBox fx:id="TermName" layoutX="20.0" layoutY="132.0" prefHeight="29.0" prefWidth="163.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
                               <Label styleClass="textContents" text="Exam Status" />
                               <ComboBox fx:id="ExamStatus" prefHeight="29.0" prefWidth="163.0" style="-fx-border-radius: 10;" styleClass="comboBox" />
                            </children>

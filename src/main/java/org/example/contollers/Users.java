@@ -15,7 +15,9 @@ import javafx.stage.StageStyle;
 import org.example.dataTransferObject.DataModel;
 import org.example.dataTransferObject.Login;
 import org.example.services.ApiServices;
+import org.example.utils.PasswordStrengthChecker;
 import org.example.utils.SharedData;
+import org.example.utils.TextFieldEmptyErrorMessage;
 import org.example.utils.sceneManager;
 import org.kordamp.ikonli.Ikon;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
@@ -82,10 +84,61 @@ public class Users {
     public TextField passwordTextField;
     @FXML
     public FontIcon eyeIcon;
+    @FXML
+    public Label passwordStrength;
+    @FXML
+    public Label roleError;
+    @FXML
+    public Label emailError;
 
 
     @FXML
     public void initialize(){
+        loginPassword.textProperty().addListener((observable,oldValue,newValue)->{
+            if(newValue.isEmpty()){
+                passwordStrength.setText("Fill this field!");
+                passwordStrength.setStyle("-fx-text-fill:red;");
+            }else{
+                passwordStrength.setText("");
+            }
+        });
+
+        loginEmail.textProperty().addListener((observable,oldValue,newValue)-> {
+            if (newValue.isEmpty()) {
+                emailError.setText("Fill this field!");
+                emailError.setStyle("-fx-text-fill:red;");
+            } else {
+                emailError.setText("");
+            }
+        });
+        LoginRole.valueProperty().addListener((observable,oldValue,newValue)->{
+            if(newValue==null){
+                roleError.setText("Fill this field!");
+                roleError.setStyle("-fx-text-fill:red;");
+            }else{
+                roleError.setText("");
+            }
+
+        });
+
+
+
+        loginPassword.textProperty().addListener((observable,oldValue,newValue)->{
+            if(newValue.isEmpty()){
+                passwordStrength.setText("");
+
+
+                //System.out.println(newValue);
+            }else{
+                PasswordStrengthChecker.passwordChecker(newValue,passwordStrength);
+            }
+
+        });
+
+
+
+
+
         loginPassword.textProperty().bindBidirectional(passwordTextField.textProperty());
 
         signupPassword.textProperty().bindBidirectional(passwordTextField1.textProperty());
@@ -147,6 +200,8 @@ public class Users {
 
     @FXML
     public void loginUser(ActionEvent actionEvent) throws IOException {
+
+
         String  Password=loginPassword.getText();
         String  Email=loginEmail.getText();
         String  Role=LoginRole.getValue();
@@ -156,18 +211,24 @@ public class Users {
         System.out.println(Email);
         System.out.println(Role);
 
-        if ((Password.trim().isEmpty() )|| (Role==null) || (Email.trim().isEmpty() )) {
 
 
-            //validateFields.checkFields(LoginRole,loginEmail,loginPassword);
 
+        if ((Password.trim().isEmpty() )|| Role==null || (Email.trim().isEmpty() )) {
+              if(Password.trim().isEmpty()){
+                  passwordStrength.setText("Fill this field!");
+                  passwordStrength.setStyle("-fx-text-fill:red;");
+              }
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Login Error");
-            alert.setHeaderText(null);
-            alert.initStyle(StageStyle.UTILITY);
-            alert.setContentText("Fill all fields!");
-            alert.show();
+            if(Role==null){
+                roleError.setText("Fill this field!");
+                roleError.setStyle("-fx-text-fill:red;");
+            }
+            if(Email.trim().isEmpty()){
+                emailError.setText("Fill this field!");
+                emailError.setStyle("-fx-text-fill:red;");
+            }
+
 
         }else{
 

@@ -24,6 +24,8 @@ public class StudentsRegistration {
     @FXML
     public Button ButtonRegister;
     @FXML
+    public TextField schoolName;
+    @FXML
 
 
     private DatePicker S_DOB;
@@ -79,6 +81,7 @@ public class StudentsRegistration {
             String Nationality = Snationality.getText();
 
             String Residence = Sresidence.getText();
+            String SchoolName=schoolName.getText();
 
             LocalDate date=S_DOB.getValue();
 
@@ -107,7 +110,7 @@ public class StudentsRegistration {
 
 
             RegisterS registerS = new RegisterS(AdmNumber, firstName, lastName, Grade,
-                    Gender, DOB, Residence,Religion,Nationality, Status,Category);
+                    Gender, DOB, Residence,Religion,Nationality, Status,Category,SchoolName);
 
             ApiServices apiServices=new ApiServices();
             apiServices.createStudent(registerS)

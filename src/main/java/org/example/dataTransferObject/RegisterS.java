@@ -12,11 +12,12 @@ public class RegisterS {
     private String Nationality;
     private String Status;
     private String Category;
+    private String schoolName;
 
-    public  RegisterS( String admNumber,String firstName,String lastName,
-                       String Grade,String Gender,String DOB,String Residence,
-                       String Religion,String Nationality, String Status,
-                       String Category){
+    public  RegisterS(String admNumber, String firstName, String lastName,
+                      String Grade, String Gender, String DOB, String Residence,
+                      String Religion, String Nationality, String Status,
+                      String Category, String schoolName){
         this.AdmNumber=admNumber;
         this.Gender=Gender;
         this.Category=Category;
@@ -28,6 +29,7 @@ public class RegisterS {
         this.Residence=Residence;
         this.firstName=firstName;
         this.lastName=lastName;
+        this.schoolName=schoolName;
 
     }
 }

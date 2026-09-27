@@ -7,6 +7,16 @@ public class SharedData {
 
     private  String teacherEmail;
 
+    private String admissionNumber;
+
+    private String term;
+    private String school;
+    private String exam;
+
+    private String academicYear;
+
+    private String url;
+
     //a private constructor to prevent creating a new object using 'new SharedData()'
     private SharedData(){}
 
@@ -15,11 +25,58 @@ public class SharedData {
         return instance;
     }
 
-    public void setTeacherEmail(String email){
-        this.teacherEmail=email;
+    public void setAdmissionNumber(String admissionNumber){
+        this.admissionNumber=admissionNumber;
     }
 
     public String getTeacherEmail(){
         return teacherEmail;
+    }
+
+    public void setTeacherEmail(String email){
+        this.teacherEmail=email;
+    }
+
+    public String getAdmissionNumber(){
+        return admissionNumber;
+    }
+
+    public void setExam(String exam){
+        this.exam=exam;
+    }
+
+    public String getExam(){
+        return exam;
+    }
+
+    public void setSchool(String school){
+        this.school=school;
+    }
+
+    public String getSchool(){
+        return school;
+    }
+
+    public void setTerm(String term){
+        this.term=term;
+    }
+
+    public String getTerm(){
+        return term;
+    }
+    public void setAcademicYear(String academicYear){
+        this.academicYear=academicYear;
+    }
+
+    public String getAcademicYear(){
+        return academicYear;
+    }
+
+    public void setUrl(String url){
+        this.url=url;
+    }
+
+    public String getUrl(){
+        return url;
     }
 }

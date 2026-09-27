@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -13,6 +14,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.example.utils.SharedData;
 import org.kordamp.ikonli.javafx.FontIcon;
 
@@ -262,6 +266,21 @@ public class Dashboard {
     }
 
     public void askAI(MouseEvent mouseEvent) {
+        try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("/org/example/chatBot.fxml"));
+            Parent root=loader.load();
+             Stage stage=new Stage();
+             Scene scene=new Scene(root);
+
+             stage.initModality(Modality.APPLICATION_MODAL);
+             stage.centerOnScreen();
+             stage.setResizable(true);
+             stage.initStyle(StageStyle.DECORATED);
+             stage.setScene(scene);
+             stage.showAndWait();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }
 
